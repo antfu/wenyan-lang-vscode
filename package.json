@@ -1,14 +1,14 @@
 {
   "name": "wenyan-lang",
-  "displayName": "Wenyan Lang",
-  "description": "文言文編程",
+  "displayName": "文言 Wenyan Lang",
+  "description": "文言 Wenyan Lang for VSCode",
   "version": "0.0.1",
   "publisher": "antfu",
   "engines": {
     "vscode": "^1.40.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [
     "*"

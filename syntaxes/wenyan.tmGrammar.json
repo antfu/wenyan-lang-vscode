@@ -1,42 +1,120 @@
 {
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "scopeName": "source.wenyan",
   "patterns": [
     {
+      "include": "#keywords"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#symbols"
+    },
+    {
       "include": "#expression"
+    },
+    {
+      "include": "#comments"
     }
   ],
   "repository": {
     "expression": {
       "patterns": [
         {
-          "include": "#letter"
-        },
-        {
-          "include": "#paren-expression"
+          "include": "#variables"
         }
       ]
     },
-    "letter": {
-      "match": "a|b|c",
-      "name": "keyword.letter"
-    },
-    "paren-expression": {
-      "begin": "\\(",
-      "end": "\\)",
-      "beginCaptures": {
-        "0": {
-          "name": "punctuation.paren.open"
-        }
-      },
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.paren.close"
-        }
-      },
-      "name": "expression.group",
+    "keywords": {
       "patterns": [
         {
-          "include": "#expression"
+          "name": "storage.modifier",
+          "match": "吾有|今有|有"
+        },
+        {
+          "name": "storage.type",
+          "match": "數|列|言|術|爻"
+        },
+        {
+          "name": "keyword.control",
+          "match": "恆為是"
+        },
+        {
+          "name": "keyword.control",
+          "match": "若非|若|者"
+        },
+        {
+          "name": "keyword.control",
+          "match": "乃得|乃歸空無|是謂|之術也|必先得|是術曰|乃行是術曰|欲行是術|也|云云|凡|中之|恆為是|為是|遍|乃止"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "等於|弗等於|弗大於|弗小於|大於|小於|加|減|乘|除|中有陽乎|中無陰乎|變|所餘幾何|以|於|之長|之|充|銜|其餘"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "昔之|今|是矣|其"
+        },
+        {
+          "name": "keyword.other",
+          "match": "書之|名之曰|施|曰|噫"
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.line",
+      "begin": "批曰。「「",
+      "end": "」」",
+      "patterns": [
+        {
+          "name": "constant.character",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.numeric",
+          "match": "零|一|二|三|四|五|六|七|八|九|十|百|千|萬|億|兆|京|垓|秭|穣|溝|澗|正|載|極|恆河沙|阿僧祇|那由他|不可思議|無量大數|分|釐|毫|絲|忽|微|纖|沙|塵|埃|渺|漠|模糊|逡巡|須臾|瞬息|彈指|剎那|六德|虛|空|清|淨"
+        },
+        {
+          "name": "constant.language",
+          "match": "陰|陽"
+        },
+        {
+          "name": "string.quoted",
+          "begin": "「「",
+          "end": "」」",
+          "patterns": [
+            {
+              "name": "constant.character",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "symbols": {
+      "patterns": [
+        {
+          "name": "punctuation.separator",
+          "match": "。"
+        }
+      ]
+    },
+    "variables": {
+      "name": "variable.other",
+      "begin": "「",
+      "end": "」",
+      "patterns": [
+        {
+          "name": "constant.character",
+          "match": "\\\\."
         }
       ]
     }
