@@ -20,13 +20,25 @@
 
 <p align="center">且未備，請見諒</p>
 
-![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo1.png)
+![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-highlight.png)
+
+## Snippets
+
+You can write 文言 very quick by snippets:
+
+![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-snippets.gif)
+
+Punctuation replacements are also avaliable
+
+![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-punctuations.gif)
+
 
 ## ToDo
 
 - [x] Syntax Highlight
 - [x] Snippets
-- [ ] Dynamic Snippets
+- [x] Dynamic Snippets
+- [ ] Code Completion
 - [ ] Language Server
 - [ ] Excute
 - [ ] Rendering
