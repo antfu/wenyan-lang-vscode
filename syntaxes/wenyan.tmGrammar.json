@@ -45,7 +45,7 @@
         },
         {
           "name": "keyword.control",
-          "match": "若非|若|者"
+          "match": "若非|若|者|夫"
         },
         {
           "name": "keyword.control",
@@ -53,7 +53,11 @@
         },
         {
           "name": "keyword.operator",
-          "match": "等於|弗等於|弗大於|弗小於|大於|小於|加|減|乘|除|中有陽乎|中無陰乎|變|所餘幾何|以|於|之長|之|充|銜|其餘"
+          "match": "等於|不等於|不大於|不小於|大於|小於"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "加|減|乘|除|中有陽乎|中無陰乎|變|所餘幾何|以|於|之長|之|充|銜|其餘"
         },
         {
           "name": "keyword.operator",
@@ -67,8 +71,8 @@
     },
     "comments": {
       "name": "comment.line",
-      "begin": "批曰。「「",
-      "end": "」」",
+      "begin": "注曰|疏曰|批曰",
+      "end": "$",
       "patterns": [
         {
           "name": "constant.character",
