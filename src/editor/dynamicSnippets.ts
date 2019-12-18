@@ -35,7 +35,6 @@ const dynamicSnippets: ExtensionModule = (ctx) => {
 
     const selection = editor.selection
     const currentPosition = selection.start.translate(0, 1)
-    const delay = 200
 
     const text = editor.document.getText(new Range(new Position(0, 0), currentPosition))
 
@@ -45,13 +44,11 @@ const dynamicSnippets: ExtensionModule = (ctx) => {
           const range = new Range(currentPosition.translate(0, -prefix.length), currentPosition)
           const { parsed, shiftBack } = parseBody(define.body)
 
-          setTimeout(() => {
-            editor.edit((editBuilder) => {
-              editBuilder.replace(range, parsed)
-            }).then(() => {
-              editor.selection = moveSelection(editor.selection, -shiftBack)
-            })
-          }, delay)
+          editor.edit((editBuilder) => {
+            editBuilder.replace(range, parsed)
+          }).then(() => {
+            editor.selection = moveSelection(editor.selection, -shiftBack)
+          })
           return
         }
       }

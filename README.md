@@ -28,7 +28,7 @@ You can write 文言 very quick by snippets:
 
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-snippets.gif)
 
-Punctuation replacements are also avaliable
+Punctuation replacements are also avaliable (You will get the result immediately, the delay is added for demostraction purpose)
 
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-punctuations.gif)
 
