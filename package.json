@@ -56,6 +56,11 @@
         "command": "extension.wenyan-lang.execute",
         "title": "Execute Script",
         "category": "文言 Wenyan"
+      },
+      {
+        "command": "extension.wenyan-lang.compile",
+        "title": "Compile Script",
+        "category": "文言 Wenyan"
       }
     ]
   },
