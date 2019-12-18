@@ -1,1 +1,157 @@
-{}
+{
+  "if": {
+    "prefix": [
+      "if",
+      "若"
+    ],
+    "body": [
+      "若${1: }者。",
+      "\t$2",
+      "也。"
+    ],
+    "description": "若"
+  },
+  "else": {
+    "prefix": [
+      "else",
+      "若非"
+    ],
+    "body": [
+      "若非。",
+      "\t$1",
+      "也。"
+    ],
+    "description": "若非"
+  },
+  "for-loop": {
+    "prefix": [
+      "for",
+      "為是"
+    ],
+    "body": [
+      "為是${1:百}遍。",
+      "\t$2",
+      "云云。"
+    ],
+    "description": "為是數遍"
+  },
+  "for-of": {
+    "prefix": [
+      "for-of",
+      "forof",
+      "凡"
+    ],
+    "body": [
+      "凡${1: }中之${2: }。",
+      "\t$3",
+      "云云。"
+    ],
+    "description": "凡⋯中之"
+  },
+  "break": {
+    "prefix": [
+      "break",
+      "乃止"
+    ],
+    "body": [
+      "乃止。"
+    ],
+    "description": "乃止"
+  },
+  "while-true": {
+    "prefix": [
+      "while",
+      "恆為"
+    ],
+    "body": [
+      "恆為是。",
+      "\t$1",
+      "云云。"
+    ],
+    "description": "恆為是"
+  },
+  "comments": {
+    "prefix": [
+      "com",
+      "//",
+      "批",
+      "疏",
+      "注"
+    ],
+    "body": [
+      "批曰。「「$1」」"
+    ],
+    "description": "批注"
+  },
+  "function": {
+    "prefix": [
+      "fun",
+      "術"
+    ],
+    "body": [
+      "吾有一術。名之曰「$1」。是術曰。",
+      "\t$2",
+      "是謂「$1」之術也。"
+    ],
+    "description": "武功秘籍"
+  },
+  "double-quote": {
+    "prefix": [
+      "\""
+    ],
+    "body": [
+      "「「$1」」"
+    ],
+    "description": "「「⋯⋯」」"
+  },
+  "single-quote": {
+    "prefix": [
+      "'"
+    ],
+    "body": [
+      "「$1」"
+    ],
+    "description": "「⋯⋯」"
+  },
+  "var-int": {
+    "prefix": [
+      "int",
+      "數"
+    ],
+    "body": [
+      "吾有一數。曰$1。名之曰「$2」。"
+    ],
+    "description": "數"
+  },
+  "var-string": {
+    "prefix": [
+      "str",
+      "言"
+    ],
+    "body": [
+      "吾有一言。曰「「$1」」。名之曰「$2」。"
+    ],
+    "description": "言"
+  },
+  "var-bool": {
+    "prefix": [
+      "bool",
+      "爻"
+    ],
+    "body": [
+      "吾有一爻。曰${1:陰}。名之曰「$2」。"
+    ],
+    "description": "爻"
+  },
+  "var-array": {
+    "prefix": [
+      "arr",
+      "list",
+      "列"
+    ],
+    "body": [
+      "吾有一列。名之曰「$1」。"
+    ],
+    "description": "列"
+  }
+}

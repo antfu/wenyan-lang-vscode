@@ -25,7 +25,8 @@
 ## ToDo
 
 - [x] Syntax Highlight
-- [ ] Snippets
+- [x] Snippets
+- [ ] Dynamic Snippets
 - [ ] Language Server
 - [ ] Excute
 - [ ] Rendering
