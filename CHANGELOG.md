@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.0.3...v0.1.0) (2019-12-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* change the code extension to `.wy`, thanks @ylvict by #1
+
+### 📚 Documentations
+
+* update examples ([6981367](https://github.com/antfu/wenyan-lang-vscode/commit/6981367085109f9f4353a351af8d2e9d5ecad176))
+
+
+### 🐞 Bug Fixes
+
+* change the code extension to `.wy`, thanks [@ylvict](https://github.com/ylvict) by [#1](https://github.com/antfu/wenyan-lang-vscode/issues/1) ([59afcac](https://github.com/antfu/wenyan-lang-vscode/commit/59afcacf61ca326cb29e4c7174214a4123eab412))
+
 ### [0.0.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.0.2...v0.0.3) (2019-12-17)
 
 
