@@ -22,13 +22,13 @@
 
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo1.png)
 
-## 待辦事
+## ToDo
 
-- [x] 語法高亮
+- [x] Syntax Highlight
 - [ ] Snippets
 - [ ] Language Server
-- [ ] 直接執行
-- [ ] 生成Render
+- [ ] Excute
+- [ ] Rendering
 
 ## License
 
