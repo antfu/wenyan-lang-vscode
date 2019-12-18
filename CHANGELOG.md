@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.1.2...v0.2.0) (2019-12-18)
+
+
+### 📚 Documentations
+
+* add screenshots ([50a9436](https://github.com/antfu/wenyan-lang-vscode/commit/50a94364f037d9d985ef312e8c5bd0159b30dac1))
+
+
+### ⚡ Features
+
+* append some basic snippets ([#2](https://github.com/antfu/wenyan-lang-vscode/issues/2)), thanks [@ylvict](https://github.com/ylvict) ([91f935a](https://github.com/antfu/wenyan-lang-vscode/commit/91f935a87fc6a73f036df9a4ab47d2cc21c85832))
+* dynamic snippets ([11d4f8a](https://github.com/antfu/wenyan-lang-vscode/commit/11d4f8a0fe361e2d2adf6bb740aa4bdb133b3cc9))
+* support for dynamic snippets ([d820440](https://github.com/antfu/wenyan-lang-vscode/commit/d820440cc29978d83b5112caece0a520159bd353))
+
 ### [0.1.2](https://github.com/antfu/wenyan-lang-vscode/compare/v0.1.1...v0.1.2) (2019-12-18)
 
 
