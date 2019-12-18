@@ -38,9 +38,10 @@ Punctuation replacements are also avaliable (You will get the result immediately
 - [x] Syntax Highlight
 - [x] Snippets
 - [x] Dynamic Snippets
+- [x] Execute
+- [x] Compile
 - [ ] Code Completion
 - [ ] Language Server
-- [ ] Excute
 - [ ] Rendering
 
 ## License

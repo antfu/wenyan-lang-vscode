@@ -55,14 +55,36 @@
       {
         "command": "extension.wenyan-lang.execute",
         "title": "Execute Script",
-        "category": "文言 Wenyan"
+        "category": "文言 Wenyan",
+        "icon": {
+          "dark": "./res/dark/debug-start.svg",
+          "light": "./res/light/debug-start.svg"
+        }
       },
       {
         "command": "extension.wenyan-lang.compile",
         "title": "Compile Script",
-        "category": "文言 Wenyan"
+        "category": "文言 Wenyan",
+        "icon": {
+          "dark": "./res/dark/code.svg",
+          "light": "./res/light/code.svg"
+        }
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == wenyan",
+          "command": "extension.wenyan-lang.compile",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == wenyan",
+          "command": "extension.wenyan-lang.execute",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "standard-version": {
     "types": [
