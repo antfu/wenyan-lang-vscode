@@ -1,6 +1,7 @@
-import { window, Disposable, workspace, TextDocumentChangeEvent, Range, Position, Selection } from 'vscode'
+import { window, workspace, TextDocumentChangeEvent, Range, Position, Selection } from 'vscode'
 import { ExtensionModule } from '../module'
 import DynamicSnippets from '../../snippets/dynamic.json'
+import { LANG_ID } from '../meta'
 
 const BODY_PARAMETER_REGEX = /\$\d+/g
 
@@ -22,46 +23,43 @@ function parseBody (body: string[]) {
   return { parsed, shiftBack }
 }
 
-const dynamicSnippets: ExtensionModule = (ctx) => {
-  function update (e: TextDocumentChangeEvent) {
-    const editor = window.activeTextEditor
+function onTextChanged (e: TextDocumentChangeEvent) {
+  const editor = window.activeTextEditor
 
-    const document = editor?.document
-    if (!editor || !document || document !== e.document)
-      return
+  const document = editor?.document
+  if (!editor || !document || document !== e.document)
+    return
 
-    if (document.languageId !== 'wenyan')
-      return
+  if (document.languageId !== LANG_ID)
+    return
 
-    if (!e.contentChanges[0])
-      return
+  if (!e.contentChanges[0])
+    return
 
-    const selection = editor.selection
-    const currentPosition = selection.start.translate(0, 1)
+  const selection = editor.selection
+  const currentPosition = selection.start.translate(0, 1)
 
-    const text = editor.document.getText(new Range(new Position(0, 0), currentPosition))
+  const text = editor.document.getText(new Range(new Position(0, 0), currentPosition))
 
-    for (const define of Object.values(DynamicSnippets)) {
-      for (const prefix of define.prefix) {
-        if (text.endsWith(prefix)) {
-          const range = new Range(currentPosition.translate(0, -prefix.length), currentPosition)
-          const { parsed, shiftBack } = parseBody(define.body)
+  for (const define of Object.values(DynamicSnippets)) {
+    for (const prefix of define.prefix) {
+      if (text.endsWith(prefix)) {
+        const range = new Range(currentPosition.translate(0, -prefix.length), currentPosition)
+        const { parsed, shiftBack } = parseBody(define.body)
 
-          editor.edit((editBuilder) => {
-            editBuilder.replace(range, parsed)
-          }).then(() => {
-            editor.selection = moveSelection(editor.selection, -shiftBack)
-          })
-          return
-        }
+        editor.edit((editBuilder) => {
+          editBuilder.replace(range, parsed)
+        }).then(() => {
+          editor.selection = moveSelection(editor.selection, -shiftBack)
+        })
+        return
       }
     }
   }
-
-  const disposables: Disposable[] = []
-  disposables.push(workspace.onDidChangeTextDocument(e => update(e)))
-
-  return disposables
 }
 
-export default dynamicSnippets
+const m: ExtensionModule = () => {
+  return workspace.onDidChangeTextDocument(e => onTextChanged(e))
+}
+
+export default m

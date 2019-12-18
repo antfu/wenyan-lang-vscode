@@ -18,19 +18,29 @@
 <a href="https://github.com/antfu/wenyan-lang-vscode" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/antfu/wenyan-lang-vscode?style=social"></a>
 </p>
 
-<p align="center">且未備，請見諒</p>
-
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-highlight.png)
 
-## Snippets
+### Compile & Execute
 
-You can write 文言 very quick by snippets:
+Direct view the compiled Javascript or Execute it. (The [compiler](https://github.com/LingDong-/wenyan-lang/tree/master/build) is shipped with this extension, no installation required!)
+
+![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-execute.png)
+
+
+### Snippets
+
+You can write Wenyan quickly by using snippets:
 
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-snippets.gif)
 
-Punctuation replacements are also avaliable (You will get the result immediately, the delay is added for demostraction purpose)
+
+### Punctuations Replacement
+
+Punctuations will be automatically replaced to fit the language.
 
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-punctuations.gif)
+
+*You will get the result immediately, the delay is added for demostraction purpose*
 
 
 ## ToDo

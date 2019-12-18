@@ -1,5 +1,6 @@
 import { ExtensionContext } from 'vscode'
 import dynamicSnippets from './editor/dynamicSnippets'
+import documentProvider from './editor/documentProvider'
 import commands from './commands'
 import { setCTX } from './ctx'
 
@@ -8,6 +9,7 @@ export function activate (ctx: ExtensionContext) {
 
   const modules = [
     dynamicSnippets,
+    documentProvider,
     commands,
   ]
 
