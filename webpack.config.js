@@ -3,7 +3,6 @@
 'use strict'
 
 const path = require('path')
-const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
 
 /** @type {import('webpack').Configuration} */
 const config = {
@@ -36,11 +35,5 @@ const config = {
       },
     ],
   },
-  plugins: [
-    // @ts-ignore
-    new FilterWarningsPlugin({
-      exclude: /Critical dependency: the request of a dependency is an expression/,
-    }),
-  ],
 }
 module.exports = config
