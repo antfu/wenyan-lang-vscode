@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.3.0...v0.4.0) (2019-12-18)
+
+
+### ⚡ Features
+
+* add more snippets ([8556abe](https://github.com/antfu/wenyan-lang-vscode/commit/8556abee4877c26224b9c4a61d5ad767bbad0843))
+* add prettier ([c5a185b](https://github.com/antfu/wenyan-lang-vscode/commit/c5a185b69f3d471d00a70726cb6289577bcd1c43))
+* document provider ([e0b6ceb](https://github.com/antfu/wenyan-lang-vscode/commit/e0b6cebe0eab8e5714dfc526c7eec804034ae4a7))
+
+
+### 🐞 Bug Fixes
+
+* prettier webpack build ([7612964](https://github.com/antfu/wenyan-lang-vscode/commit/761296481cc5308446246d57f34df92131cdf100))
+
 ## [0.3.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.2.3...v0.3.0) (2019-12-18)
 
 
