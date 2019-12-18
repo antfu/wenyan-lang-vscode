@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.2.3...v0.3.0) (2019-12-18)
+
+
+### ⚡ Features
+
+* add execute and compile button ([a2d2241](https://github.com/antfu/wenyan-lang-vscode/commit/a2d224137d01b3f0cabafef08cc79e2137be21aa))
+* compile and display ([f21f177](https://github.com/antfu/wenyan-lang-vscode/commit/f21f1771622c91207da9a2fd66c7d9482a8a89cb))
+* execute script ([4ff335b](https://github.com/antfu/wenyan-lang-vscode/commit/4ff335bcf669dcd8963408caa8423be3c681073e))
+
 ### [0.2.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.2.2...v0.2.3) (2019-12-18)
 
 
