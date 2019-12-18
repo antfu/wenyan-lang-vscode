@@ -50,6 +50,13 @@
         "scopeName": "source.wenyan",
         "path": "./syntaxes/wenyan.tmGrammar.json"
       }
+    ],
+    "commands": [
+      {
+        "command": "extension.wenyan-lang.execute",
+        "title": "Execute Script",
+        "category": "文言 Wenyan"
+      }
     ]
   },
   "standard-version": {
