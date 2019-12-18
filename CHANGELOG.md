@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.4.3...v0.5.0) (2019-12-18)
+
+
+### ⚡ Features
+
+* support rendering! ([b3353fb](https://github.com/antfu/wenyan-lang-vscode/commit/b3353fb357ee6052c77d2d325a56eee42c440a4d))
+
 ### [0.4.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.4.2...v0.4.3) (2019-12-18)
 
 
