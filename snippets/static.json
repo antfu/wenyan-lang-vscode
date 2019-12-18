@@ -73,7 +73,6 @@
   "comments": {
     "prefix": [
       "com",
-      "//",
       "批",
       "疏",
       "注"
@@ -108,24 +107,6 @@
       "是謂「${1:術之名}」之術也。"
     ],
     "description": "吾有一術，需一可变者"
-  },
-  "double-quote": {
-    "prefix": [
-      "\""
-    ],
-    "body": [
-      "「「$1」」"
-    ],
-    "description": "「「⋯⋯」」"
-  },
-  "single-quote": {
-    "prefix": [
-      "'"
-    ],
-    "body": [
-      "「$1」"
-    ],
-    "description": "「⋯⋯」"
   },
   "var-int": {
     "prefix": [
@@ -179,6 +160,7 @@
   "log": {
     "prefix": [
       "log",
+      "print",
       "書之"
     ],
     "body": [

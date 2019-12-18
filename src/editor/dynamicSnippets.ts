@@ -1,10 +1,25 @@
 import { window, Disposable, workspace, TextDocumentChangeEvent, Range, Position, Selection } from 'vscode'
 import { ExtensionModule } from '../module'
+import DynamicSnippets from '../../snippets/dynamic.json'
+
+const BODY_PARAMETER_REGEX = /\$\d+/g
 
 function moveSelection (selection: Selection, shift: number): Selection {
   const newPosition = selection.active.translate(0, shift)
   const newSelection = new Selection(newPosition, newPosition)
   return newSelection
+}
+
+function parseBody (body: string[]) {
+  const rawBody = body.join('\n')
+  const parsed = rawBody.replace(BODY_PARAMETER_REGEX, '')
+  let shiftBack = 0
+
+  const match = rawBody.match(BODY_PARAMETER_REGEX)
+  if (match && match[0])
+    shiftBack = parsed.length - rawBody.indexOf(match[0]) || 0 - match[0].length
+
+  return { parsed, shiftBack }
 }
 
 const dynamicSnippets: ExtensionModule = (ctx) => {
@@ -19,37 +34,27 @@ const dynamicSnippets: ExtensionModule = (ctx) => {
       return
 
     const selection = editor.selection
-    const originalPosition = selection.start
     const currentPosition = selection.start.translate(0, 1)
+    const delay = 200
 
     const text = editor.document.getText(new Range(new Position(0, 0), currentPosition))
 
-    // TODO: extract the hard-coded to tmSnippets.json
-    if (text.endsWith('"')) {
-      editor.edit((editBuilder) => {
-        editBuilder.replace(new Range(originalPosition, currentPosition), '「「」」')
-      }).then(() => {
-        editor.selection = moveSelection(editor.selection, -2)
-      })
-    }
-    else if (text.endsWith('\'')) {
-      editor.edit((editBuilder) => {
-        editBuilder.replace(new Range(originalPosition, currentPosition), '「」')
-      }).then(() => {
-        editor.selection = moveSelection(editor.selection, -1)
-      })
-    }
-    else if (text.endsWith('.')) {
-      editor.edit((editBuilder) => {
-        editBuilder.replace(new Range(originalPosition, currentPosition), '。')
-      })
-    }
-    else if (text.endsWith('//')) {
-      editor.edit((editBuilder) => {
-        editBuilder.replace(new Range(originalPosition.translate(0, -1), currentPosition), '批曰。「「」」')
-      }).then(() => {
-        editor.selection = moveSelection(editor.selection, -2)
-      })
+    for (const define of Object.values(DynamicSnippets)) {
+      for (const prefix of define.prefix) {
+        if (text.endsWith(prefix)) {
+          const range = new Range(currentPosition.translate(0, -prefix.length), currentPosition)
+          const { parsed, shiftBack } = parseBody(define.body)
+
+          setTimeout(() => {
+            editor.edit((editBuilder) => {
+              editBuilder.replace(range, parsed)
+            }).then(() => {
+              editor.selection = moveSelection(editor.selection, -shiftBack)
+            })
+          }, delay)
+          return
+        }
+      }
     }
   }
 

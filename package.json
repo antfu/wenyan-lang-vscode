@@ -41,7 +41,7 @@
     "snippets": [
       {
         "language": "wenyan",
-        "path": "./snippets/wenyan.json"
+        "path": "./snippets/static.json"
       }
     ],
     "grammars": [

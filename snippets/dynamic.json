@@ -1,0 +1,38 @@
+{
+  "double-quote": {
+    "prefix": [
+      "\""
+    ],
+    "body": [
+      "「「$1」」"
+    ],
+    "description": "「「⋯⋯」」"
+  },
+  "single-quote": {
+    "prefix": [
+      "'"
+    ],
+    "body": [
+      "「$1」"
+    ],
+    "description": "「⋯⋯」"
+  },
+  "comments": {
+    "prefix": [
+      "//"
+    ],
+    "body": [
+      "批曰。「「$1」」"
+    ],
+    "description": "批注"
+  },
+  "period": {
+    "prefix": [
+      "."
+    ],
+    "body": [
+      "。"
+    ],
+    "description": "句讀"
+  }
+}
