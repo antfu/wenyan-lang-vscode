@@ -155,7 +155,7 @@
       "var"
     ],
     "body": "吾有一${1:形}。曰${2:值}。名之曰「${3:名}」。",
-    "description": "吾有一【可变者】"
+    "description": "吾有一「可变者」"
   },
   "log": {
     "prefix": [
@@ -167,5 +167,32 @@
       "書之。"
     ],
     "description": "書之。"
+  },
+  "or": {
+    "prefix": [
+      "or"
+    ],
+    "body": [
+      "夫「$1」「$2」中有陽乎。"
+    ],
+    "description": "夫⋯中有陽乎"
+  },
+  "and": {
+    "prefix": [
+      "and"
+    ],
+    "body": [
+      "夫「$1」「$2」中無陰乎。"
+    ],
+    "description": "夫⋯中無陰乎"
+  },
+  "mod": {
+    "prefix": [
+      "mod"
+    ],
+    "body": [
+      "所餘幾何。"
+    ],
+    "description": "所餘幾何"
   }
 }
