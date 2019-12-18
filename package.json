@@ -69,9 +69,32 @@
           "dark": "./res/dark/code.svg",
           "light": "./res/light/code.svg"
         }
+      },
+      {
+        "command": "extension.wenyan-lang.reload",
+        "title": "Reload Result",
+        "category": "文言 Wenyan",
+        "icon": {
+          "dark": "./res/dark/debug-restart.svg",
+          "light": "./res/light/debug-restart.svg"
+        }
       }
     ],
     "menus": {
+      "commandPalette": [
+        {
+          "when": "config.not_exists",
+          "command": "extension.wenyan-lang.compile"
+        },
+        {
+          "when": "config.not_exists",
+          "command": "extension.wenyan-lang.execute"
+        },
+        {
+          "when": "config.not_exists",
+          "command": "extension.wenyan-lang.reload"
+        }
+      ],
       "editor/title": [
         {
           "when": "resourceLangId == wenyan",
@@ -82,6 +105,11 @@
           "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.execute",
           "group": "navigation"
+        },
+        {
+          "command": "extension.wenyan-lang.reload",
+          "group": "navigation",
+          "when": "resourceScheme == wenyan"
         }
       ]
     }
