@@ -30,6 +30,9 @@ const dynamicSnippets: ExtensionModule = (ctx) => {
     if (!editor || !document || document !== e.document)
       return
 
+    if (document.languageId !== 'wenyan')
+      return
+
     if (!e.contentChanges[0])
       return
 
