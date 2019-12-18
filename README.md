@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://github.com/antfu/wenyan-lang-vscode/raw/master/res/logo.png" alt="logo" width="150"/>
+<img src="https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/logo.png" alt="logo" width="150"/>
 </p>
 
 <h1 align="center">
