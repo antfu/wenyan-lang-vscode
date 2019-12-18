@@ -6,6 +6,8 @@ export interface ExecuteOptions {
   exec?: boolean
   lang?: 'js' | 'py'
   roman?: string
+  render?: string
+  output?: string
 }
 
 export function getWenyanPath () {
@@ -19,19 +21,11 @@ export function getOptionsString (options?: ExecuteOptions) {
   if (!options)
     return ''
 
-  if (options.exec) {
-    parts.push('--exec')
-    parts.push('true')
-  }
-
-  if (options.roman) {
-    parts.push('--roman')
-    parts.push(options.roman)
-  }
-
-  if (options.lang) {
-    parts.push('--lang')
-    parts.push(options.lang)
+  for (const key of Object.keys(options) as (keyof ExecuteOptions)[]) {
+    if (options[key]) {
+      parts.push(`--${key}`)
+      parts.push(options[key])
+    }
   }
 
   return parts.join(' ')

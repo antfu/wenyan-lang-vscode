@@ -5,4 +5,5 @@ export enum CommandKeys {
   execute = 'extension.wenyan-lang.execute',
   compile = 'extension.wenyan-lang.compile',
   reload = 'extension.wenyan-lang.reload',
+  render = 'extension.wenyan-lang.render',
 }

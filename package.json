@@ -78,6 +78,15 @@
           "dark": "./res/dark/debug-restart.svg",
           "light": "./res/light/debug-restart.svg"
         }
+      },
+      {
+        "command": "extension.wenyan-lang.render",
+        "title": "Render Document",
+        "category": "文言 Wenyan",
+        "icon": {
+          "dark": "./res/dark/device-camera.svg",
+          "light": "./res/light/device-camera.svg"
+        }
       }
     ],
     "menus": {
@@ -93,6 +102,10 @@
         {
           "when": "config.not_exists",
           "command": "extension.wenyan-lang.reload"
+        },
+        {
+          "when": "config.not_exists",
+          "command": "extension.wenyan-lang.render"
         }
       ],
       "editor/title": [
@@ -104,6 +117,11 @@
         {
           "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.execute",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == wenyan",
+          "command": "extension.wenyan-lang.render",
           "group": "navigation"
         },
         {
