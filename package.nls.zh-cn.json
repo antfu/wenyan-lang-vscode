@@ -1,0 +1,8 @@
+{
+  "extname": "文言 Wenyan Lang",
+  "command.execute": "执行脚本",
+  "command.compile": "编译脚本",
+  "command.reload": "重新加载",
+  "command.render": "渲染文件",
+  "config.executable_path": "编译器 wenyan.js 的文件路径"
+}
