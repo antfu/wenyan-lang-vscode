@@ -1,6 +1,7 @@
 import path from 'path'
 import cp from 'child_process'
 import { getCTX } from './ctx'
+import { Log } from './log'
 
 export interface ExecuteOptions {
   exec?: boolean
@@ -33,11 +34,11 @@ export function getOptionsString (options?: ExecuteOptions) {
 
 export function Exec (filename: string, options?: ExecuteOptions) {
   const cmd = `node "${getWenyanPath()}" "${filename}" ${getOptionsString(options)}`
-  console.log(`Executing ${cmd}`)
+  Log.info(`💻 ${cmd}`)
   return new Promise<string>((resolve, reject) => {
     cp.exec(cmd, (err, stdout, stderr) => {
       if (err) {
-        console.log(`error: ${err}`)
+        Log.error(`error: ${err}`)
         reject(err)
       }
       else {

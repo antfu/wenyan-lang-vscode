@@ -1,5 +1,5 @@
 {
-  "extname": "文言 Wenyan Lang",
+  "extname": "文言 Wenyan",
   "command.execute": "Execute Script",
   "command.compile": "Compile Script",
   "command.reload": "Reload Result",

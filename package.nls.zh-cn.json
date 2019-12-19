@@ -1,5 +1,5 @@
 {
-  "extname": "文言 Wenyan Lang",
+  "extname": "文言 Wenyan",
   "command.execute": "执行脚本",
   "command.compile": "编译脚本",
   "command.reload": "重新加载",
