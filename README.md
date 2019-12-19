@@ -52,6 +52,7 @@ Punctuations will be automatically replaced to fit the language.
 - [x] Dynamic Snippets
 - [x] Execute
 - [x] Compile
+- [ ] Compile to Python
 - [ ] Code Completion
 - [ ] Language Server
 - [ ] Rendering
