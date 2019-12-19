@@ -1,9 +1,18 @@
 import path from 'path'
+import { exec } from 'child_process'
 import { commands, window, Uri, workspace, ViewColumn } from 'vscode'
 import { Exec } from '../exec'
 import { CommandKeys, LANG_ID, DOC_SCHEMA } from '../meta'
 import { ExtensionModule } from '../module'
 import { documentProvider } from '../editor/documentProvider'
+
+function getCommandLine () {
+  switch (process.platform) {
+    case 'darwin' : return 'open'
+    case 'win32' : return 'start'
+    default : return 'xdg-open'
+  }
+}
 
 const m: ExtensionModule = () => {
   return [
@@ -36,11 +45,36 @@ const m: ExtensionModule = () => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
         return
+
       const defaultUri = Uri.file(document.uri.fsPath.replace(/\.wy$/, '.svg'))
-      const uri = await window.showSaveDialog({ defaultUri }) // TODO: filter
+      const uri = await window.showSaveDialog({
+        defaultUri,
+        filters: { SVG: ['svg'] },
+      })
       if (!uri)
         return
-      await Exec(document.uri.fsPath, { render: '佚名', output: uri.fsPath }) // TODO: enter title
+
+      const { name: defaultTitle } = path.parse(uri.fsPath)
+      const title = await window.showInputBox({
+        prompt: 'Enter the title for rendering', // TODO: i18n
+        value: defaultTitle,
+      })
+      if (!title)
+        return
+
+      const output = await Exec(document.uri.fsPath, { render: title, output: uri.fsPath }) || ''
+
+      const filenames = output.split('\n').map(i => i.trim()).filter(i => i)
+
+      if (filenames.length) {
+        const openInEditor = 'Open in VSCode'
+        const openInImageViewer = 'Open in Viewer'
+        const result = await window.showInformationMessage('Successfully rendered', openInEditor, openInImageViewer)
+        if (result === openInEditor)
+          window.showTextDocument(await workspace.openTextDocument(Uri.file(filenames[0])))
+        if (result === openInImageViewer)
+          exec(`${getCommandLine()} ${filenames[0]}`)
+      }
     }),
   ]
 }

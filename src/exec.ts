@@ -18,7 +18,10 @@ export function getOptionsString (options?: ExecuteOptions) {
   for (const key of Object.keys(options) as (keyof ExecuteOptions)[]) {
     if (options[key]) {
       parts.push(`--${key}`)
-      parts.push(options[key])
+      if (typeof options[key] === 'string')
+        parts.push(`"${options[key]}"`)
+      else
+        parts.push(options[key])
     }
   }
 
