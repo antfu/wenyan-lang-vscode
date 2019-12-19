@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.0...v0.7.1) (2019-12-19)
+
+
+### 🐞 Bug Fixes
+
+* support for full-width quotes ([d578e0f](https://github.com/antfu/wenyan-lang-vscode/commit/d578e0f82b4dcdc4c6ac11e59beee2df54c6baee))
+
 ## [0.7.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.6.0...v0.7.0) (2019-12-19)
 
 
