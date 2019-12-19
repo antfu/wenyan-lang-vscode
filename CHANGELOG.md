@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/antfu/wenyan-lang-vscode/compare/v0.5.0...v0.5.1) (2019-12-19)
+
+
+### ⚡ Features
+
+* config to specify executable path ([d9821c7](https://github.com/antfu/wenyan-lang-vscode/commit/d9821c740b18611c7fbb50c82c97035ba6cd8342))
+* i18n ([1d7ac27](https://github.com/antfu/wenyan-lang-vscode/commit/1d7ac2707677373d315f23b8c0de632855905168))
+
+
+### 🌍 Internationalization
+
+* add zh-cn ([6c0c5ad](https://github.com/antfu/wenyan-lang-vscode/commit/6c0c5ad70b3dec6c55eb737a833800d6e22d884b))
+
+
+### 📚 Documentations
+
+* update readme ([63f0090](https://github.com/antfu/wenyan-lang-vscode/commit/63f0090d4ec9e7bfcd7cb09c2756f17a94d82180))
+
 ## [0.5.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.4.3...v0.5.0) (2019-12-18)
 
 
