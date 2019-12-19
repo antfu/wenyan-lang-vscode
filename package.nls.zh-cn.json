@@ -4,6 +4,7 @@
   "command.reload": "重新加载",
   "command.render": "渲染文件",
   "config.executable_path": "编译器 wenyan.js 的文件路径",
+  "config.target_language": "编译目标语言",
   "extname": "文言 Wenyan",
   "prompt.enter_the_title_for_rendering": "输入渲染用的文章标题",
   "prompt.open_in_viewer": "用默认程序查看",

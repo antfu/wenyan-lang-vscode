@@ -1,10 +1,10 @@
 import cp from 'child_process'
 import { Log } from './log'
-import { Config } from './config'
+import { Config, SupportTargetLanguage } from './config'
 
 export interface ExecuteOptions {
   exec?: boolean
-  lang?: 'js' | 'py'
+  lang?: SupportTargetLanguage
   roman?: string
   render?: string
   output?: string

@@ -1,6 +1,7 @@
 import path from 'path'
 import { exec } from 'child_process'
 import { commands, window, Uri, workspace, ViewColumn } from 'vscode'
+import { Config } from '../config'
 import { Exec } from '../exec'
 import { CommandKeys, LANG_ID, DOC_SCHEMA } from '../meta'
 import { ExtensionModule } from '../module'
@@ -22,7 +23,7 @@ const m: ExtensionModule = () => {
       if (document?.languageId === LANG_ID) {
         const { name } = path.parse(document.uri.fsPath)
         const filename = `${name}(Output)`
-        const uri = Uri.parse(`${DOC_SCHEMA}:${filename}?action=execute&filepath=${encodeURIComponent(document.uri.fsPath)}`)
+        const uri = Uri.parse(`${DOC_SCHEMA}:${filename}?action=execute&filepath=${encodeURIComponent(document.uri.fsPath)}&target=${Config.targetLanguage}`)
         documentProvider.onDidChangeEmitter.fire(uri)
         window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
       }
@@ -31,8 +32,8 @@ const m: ExtensionModule = () => {
       const document = window.activeTextEditor?.document
       if (document?.languageId === LANG_ID) {
         const { name } = path.parse(document.uri.fsPath)
-        const filename = `${name}(Compiled).js`
-        const uri = Uri.parse(`${DOC_SCHEMA}:${filename}?action=compile&filepath=${encodeURIComponent(document.uri.fsPath)}`)
+        const filename = `${name}(Compiled).${Config.targetLanguage}`
+        const uri = Uri.parse(`${DOC_SCHEMA}:${filename}?action=compile&filepath=${encodeURIComponent(document.uri.fsPath)}&target=${Config.targetLanguage}`)
         documentProvider.onDidChangeEmitter.fire(uri)
         window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
       }

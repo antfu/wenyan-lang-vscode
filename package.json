@@ -139,6 +139,15 @@
           "wenyan-lang.executablePath": {
             "type": "string",
             "description": "%config.executable_path%"
+          },
+          "wenyan-lang.targetLanguage": {
+            "type": "string",
+            "enum": [
+              "javascript",
+              "python"
+            ],
+            "default": "javascript",
+            "description": "%config.target_language%"
           }
         }
       }

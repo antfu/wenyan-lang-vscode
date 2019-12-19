@@ -44,6 +44,13 @@ Punctuations will be automatically replaced to fit the language.
 
 *You will get the result immediately, the delay is added for demostraction purpose*
 
+### Configurations
+
+| Fields | Default | Note |
+| --- | --- | --- |
+| `wenyan-lang.executablePath` | built-in | Filepath to executable `wenyan.js` |
+| `wenyan-lang.targetLanguage` | `javascript` | Target language that compiles to |
+
 
 ## ToDo
 
@@ -52,10 +59,10 @@ Punctuations will be automatically replaced to fit the language.
 - [x] Dynamic Snippets
 - [x] Execute
 - [x] Compile
-- [ ] Compile to Python
+- [x] Compile to Python
+- [x] Rendering
 - [ ] Code Completion
 - [ ] Language Server
-- [ ] Rendering
 
 ## License
 
