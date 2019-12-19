@@ -8,6 +8,24 @@
     ],
     "description": "「「⋯⋯」」"
   },
+  "double-quote-full-width-left": {
+    "prefix": [
+      "“"
+    ],
+    "body": [
+      "「「"
+    ],
+    "description": "「「"
+  },
+  "double-quote-full-width-right": {
+    "prefix": [
+      "”"
+    ],
+    "body": [
+      "」"
+    ],
+    "description": "」」"
+  },
   "single-quote": {
     "prefix": [
       "'"
@@ -16,6 +34,24 @@
       "「$1」"
     ],
     "description": "「⋯⋯」"
+  },
+  "single-quote-full-width-left": {
+    "prefix": [
+      "‘"
+    ],
+    "body": [
+      "「"
+    ],
+    "description": "「"
+  },
+  "single-quote-full-width-right": {
+    "prefix": [
+      "’"
+    ],
+    "body": [
+      "」"
+    ],
+    "description": "」"
   },
   "comments": {
     "prefix": [
