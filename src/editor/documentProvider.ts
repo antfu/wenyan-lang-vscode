@@ -6,6 +6,7 @@ import { DOC_SCHEMA } from '../meta'
 import { SupportTargetLanguage } from '../config'
 import { ExtensionModule } from '../module'
 import { Exec } from '../exec'
+import { optimize } from '../misc/optimize'
 
 async function getCompiledResult (filepath: string, target: SupportTargetLanguage) {
   const result = await Exec(filepath, { lang: target }) || ''
@@ -13,7 +14,7 @@ async function getCompiledResult (filepath: string, target: SupportTargetLanguag
   if (target === 'py')
     return result
   else
-    return prettier.format(result, { semi: false, parser: 'babel', plugins: [parserBabel] })
+    return prettier.format(optimize(result), { semi: false, parser: 'babel', plugins: [parserBabel] })
 }
 
 async function getExecResult (filepath: string, target: SupportTargetLanguage) {

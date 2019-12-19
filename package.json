@@ -111,18 +111,18 @@
       "editor/title": [
         {
           "when": "resourceLangId == wenyan",
+          "command": "extension.wenyan-lang.render",
+          "group": "navigation@1170"
+        },
+        {
+          "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.compile",
-          "group": "navigation"
+          "group": "navigation@1171"
         },
         {
           "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.execute",
-          "group": "navigation"
-        },
-        {
-          "when": "resourceLangId == wenyan",
-          "command": "extension.wenyan-lang.render",
-          "group": "navigation"
+          "group": "navigation@1172"
         },
         {
           "command": "extension.wenyan-lang.reload",
