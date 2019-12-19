@@ -1,0 +1,8 @@
+{
+  "extname": "文言 Wenyan Lang",
+  "command.execute": "Execute Script",
+  "command.compile": "Compile Script",
+  "command.reload": "Reload Result",
+  "command.render": "Render Document",
+  "config.executable_path": "Filepath to executable `wenyan.js`"
+}

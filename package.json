@@ -1,6 +1,6 @@
 {
   "name": "wenyan-lang",
-  "displayName": "文言 Wenyan Lang",
+  "displayName": "%extname%",
   "description": "文言 Wenyan Lang for VSCode",
   "version": "0.5.0",
   "publisher": "antfu",
@@ -54,8 +54,8 @@
     "commands": [
       {
         "command": "extension.wenyan-lang.execute",
-        "title": "Execute Script",
-        "category": "文言 Wenyan",
+        "title": "%command.execute%",
+        "category": "%extname%",
         "icon": {
           "dark": "./res/dark/debug-start.svg",
           "light": "./res/light/debug-start.svg"
@@ -63,8 +63,8 @@
       },
       {
         "command": "extension.wenyan-lang.compile",
-        "title": "Compile Script",
-        "category": "文言 Wenyan",
+        "title": "%command.compile%",
+        "category": "%extname%",
         "icon": {
           "dark": "./res/dark/code.svg",
           "light": "./res/light/code.svg"
@@ -72,8 +72,8 @@
       },
       {
         "command": "extension.wenyan-lang.reload",
-        "title": "Reload Result",
-        "category": "文言 Wenyan",
+        "title": "%command.reload%",
+        "category": "%extname%",
         "icon": {
           "dark": "./res/dark/debug-restart.svg",
           "light": "./res/light/debug-restart.svg"
@@ -81,8 +81,8 @@
       },
       {
         "command": "extension.wenyan-lang.render",
-        "title": "Render Document",
-        "category": "文言 Wenyan",
+        "title": "%command.render%",
+        "category": "%extname%",
         "icon": {
           "dark": "./res/dark/device-camera.svg",
           "light": "./res/light/device-camera.svg"
@@ -130,7 +130,19 @@
           "when": "resourceScheme == wenyan"
         }
       ]
-    }
+    },
+    "configuration": [
+      {
+        "type": "object",
+        "title": "%extname%",
+        "properties": {
+          "wenyan-lang.executablePath": {
+            "type": "string",
+            "description": "%config.executable_path%"
+          }
+        }
+      }
+    ]
   },
   "standard-version": {
     "types": [
