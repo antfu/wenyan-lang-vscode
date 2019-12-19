@@ -5,6 +5,7 @@ import { Exec } from '../exec'
 import { CommandKeys, LANG_ID, DOC_SCHEMA } from '../meta'
 import { ExtensionModule } from '../module'
 import { documentProvider } from '../editor/documentProvider'
+import i18n from '../i18n'
 
 function getCommandLine () {
   switch (process.platform) {
@@ -56,7 +57,7 @@ const m: ExtensionModule = () => {
 
       const { name: defaultTitle } = path.parse(uri.fsPath)
       const title = await window.showInputBox({
-        prompt: 'Enter the title for rendering', // TODO: i18n
+        prompt: i18n.t('prompt.enter_the_title_for_rendering'), // TODO: i18n
         value: defaultTitle,
       })
       if (!title)
@@ -67,9 +68,9 @@ const m: ExtensionModule = () => {
       const filenames = output.split('\n').map(i => i.trim()).filter(i => i)
 
       if (filenames.length) {
-        const openInEditor = 'Open in VSCode'
-        const openInImageViewer = 'Open in Viewer'
-        const result = await window.showInformationMessage('Successfully rendered', openInEditor, openInImageViewer)
+        const openInEditor = i18n.t('prompt.open_in_vscode')
+        const openInImageViewer = i18n.t('prompt.open_in_viewer')
+        const result = await window.showInformationMessage(i18n.t('prompt.successfully_rendered'), openInEditor, openInImageViewer)
         if (result === openInEditor)
           window.showTextDocument(await workspace.openTextDocument(Uri.file(filenames[0])))
         if (result === openInImageViewer)

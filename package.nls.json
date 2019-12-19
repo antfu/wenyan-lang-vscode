@@ -1,8 +1,12 @@
 {
-  "extname": "文言 Wenyan",
-  "command.execute": "Execute Script",
   "command.compile": "Compile Script",
+  "command.execute": "Execute Script",
   "command.reload": "Reload Result",
   "command.render": "Render Document",
-  "config.executable_path": "Filepath to executable `wenyan.js`"
+  "config.executable_path": "Filepath to executable `wenyan.js`",
+  "extname": "文言 Wenyan",
+  "prompt.enter_the_title_for_rendering": "Enter the title for rendering",
+  "prompt.open_in_viewer": "Open in Viewer",
+  "prompt.open_in_vscode": "Open in VSCode",
+  "prompt.successfully_rendered": "Successfully rendered"
 }
