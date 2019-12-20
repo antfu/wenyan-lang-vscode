@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.4](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.3...v0.7.4) (2019-12-20)
+
+
+### ⚡ Features
+
+* runOnSave ([33bd8f1](https://github.com/antfu/wenyan-lang-vscode/commit/33bd8f1a117159bdc3dce966a6d30cc202433210))
+
+
+### 🔮 Refactor
+
+* reafactor ([f136873](https://github.com/antfu/wenyan-lang-vscode/commit/f136873f5abbdc05ccaefcff6e50b2183182700a))
+
 ### [0.7.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.2...v0.7.3) (2019-12-20)
 
 
