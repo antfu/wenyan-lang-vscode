@@ -148,6 +148,11 @@
             ],
             "default": "javascript",
             "description": "%config.target_language%"
+          },
+          "wenyan-lang.runOnSave": {
+            "type": "boolean",
+            "default": false,
+            "description": "%config.run_on_save%"
           }
         }
       }

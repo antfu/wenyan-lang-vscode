@@ -10,3 +10,5 @@ export enum CommandKeys {
   reload = 'extension.wenyan-lang.reload',
   render = 'extension.wenyan-lang.render',
 }
+
+export type ResultActions = 'execute' | 'compile'

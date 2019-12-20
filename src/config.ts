@@ -17,6 +17,10 @@ export class Config {
       return 'js'
   }
 
+  static get runOnSave () {
+    return this.getConfig<boolean>('runOnSave') || false
+  }
+
   private static getConfig<T = any> (key: string): T | undefined {
     const config = workspace
       .getConfiguration(EXT_NAMESPACE)

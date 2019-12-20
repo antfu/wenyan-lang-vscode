@@ -1,6 +1,6 @@
 import path from 'path'
-import { exec } from 'child_process'
 import { commands, window, Uri, workspace, ViewColumn } from 'vscode'
+import { openInDefaultViewer, getResultUrl } from '../utils'
 import { Config } from '../config'
 import { Exec } from '../exec'
 import { CommandKeys, LANG_ID, DOC_SCHEMA } from '../meta'
@@ -8,41 +8,32 @@ import { ExtensionModule } from '../module'
 import { documentProvider } from '../editor/documentProvider'
 import i18n from '../i18n'
 
-function getCommandLine () {
-  switch (process.platform) {
-    case 'darwin' : return 'open'
-    case 'win32' : return 'start'
-    default : return 'xdg-open'
-  }
-}
-
 const m: ExtensionModule = () => {
   return [
     commands.registerCommand(CommandKeys.execute, async () => {
       const document = window.activeTextEditor?.document
-      if (document?.languageId === LANG_ID) {
-        const { name } = path.parse(document.uri.fsPath)
-        const filename = `${name}(Output)`
-        const uri = Uri.parse(`${DOC_SCHEMA}:${filename}?action=execute&filepath=${encodeURIComponent(document.uri.fsPath)}&target=${Config.targetLanguage}`)
-        documentProvider.onDidChangeEmitter.fire(uri)
-        window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
-      }
+      if (document?.languageId !== LANG_ID)
+        return
+      const uri = getResultUrl(document.uri.fsPath, 'execute', Config.targetLanguage)
+      documentProvider.onDidChangeEmitter.fire(uri)
+      window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
+
     commands.registerCommand(CommandKeys.compile, async () => {
       const document = window.activeTextEditor?.document
-      if (document?.languageId === LANG_ID) {
-        const { name } = path.parse(document.uri.fsPath)
-        const filename = `${name}(Compiled).${Config.targetLanguage}`
-        const uri = Uri.parse(`${DOC_SCHEMA}:${filename}?action=compile&filepath=${encodeURIComponent(document.uri.fsPath)}&target=${Config.targetLanguage}`)
-        documentProvider.onDidChangeEmitter.fire(uri)
-        window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
-      }
+      if (document?.languageId !== LANG_ID)
+        return
+      const uri = getResultUrl(document.uri.fsPath, 'compile', Config.targetLanguage)
+      documentProvider.onDidChangeEmitter.fire(uri)
+      window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
+
     commands.registerCommand(CommandKeys.reload, async () => {
       const document = window.activeTextEditor?.document
       if (document?.uri.scheme === DOC_SCHEMA)
         documentProvider.onDidChangeEmitter.fire(document.uri)
     }),
+
     commands.registerCommand(CommandKeys.render, async () => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
@@ -75,7 +66,7 @@ const m: ExtensionModule = () => {
         if (result === openInEditor)
           window.showTextDocument(await workspace.openTextDocument(Uri.file(filenames[0])))
         if (result === openInImageViewer)
-          exec(`${getCommandLine()} ${filenames[0]}`)
+          openInDefaultViewer(filenames[0])
       }
     }),
   ]
