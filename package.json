@@ -151,7 +151,7 @@
           },
           "wenyan-lang.runOnSave": {
             "type": "boolean",
-            "default": false,
+            "default": true,
             "description": "%config.run_on_save%"
           }
         }

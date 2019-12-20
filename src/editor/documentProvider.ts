@@ -34,10 +34,25 @@ class DocumentProvider implements TextDocumentContentProvider {
     if (!filepath || !action)
       return ''
 
-    if (action === 'execute')
-      return await getExecResult(filepath, target)
-    if (action === 'compile')
-      return await getCompiledResult(filepath, target)
+    try {
+      if (action === 'execute')
+        return await getExecResult(filepath, target)
+      if (action === 'compile')
+        return await getCompiledResult(filepath, target)
+    }
+    catch (e) {
+      const error = e.toString()
+
+      if (action === 'compile') {
+        if (target === 'js')
+          return `/*\n${error}\n*/`
+
+        if (target === 'py')
+          return `'''\n${error}\n'''`
+      }
+
+      return error
+    }
   }
 }
 

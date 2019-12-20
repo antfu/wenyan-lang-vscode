@@ -2,7 +2,7 @@ import { exec } from 'child_process'
 import path from 'path'
 import { Uri } from 'vscode'
 import { ResultActions, DOC_SCHEMA } from './meta'
-import { SupportTargetLanguage } from './config'
+import { SupportTargetLanguage, Config } from './config'
 
 export function parseQuery (queryString: string) {
   const query: Record<string, string> = {}
@@ -24,8 +24,8 @@ export function openInDefaultViewer (filename: string) {
   exec(`${open} ${filename}`)
 }
 
-export function getResultUrl (filepath: string, action: ResultActions, targetLanguage: SupportTargetLanguage) {
+export function getResultUrl (filepath: string, action: ResultActions, targetLanguage: SupportTargetLanguage = Config.targetLanguage) {
   const { name } = path.parse(filepath)
   const filename = action === 'execute' ? `${name}(Output)` : `${name}(Compiled).${targetLanguage}`
-  return Uri.parse(`${DOC_SCHEMA}:${filename}?action=execute&filepath=${encodeURIComponent(filepath)}&target=${targetLanguage}`)
+  return Uri.parse(`${DOC_SCHEMA}:${filename}?action=${action}&filepath=${encodeURIComponent(filepath)}&target=${targetLanguage}`)
 }

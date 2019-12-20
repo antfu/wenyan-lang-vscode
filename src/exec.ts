@@ -33,9 +33,9 @@ export function Exec (filename: string, options?: ExecuteOptions) {
   Log.info(`💻 ${cmd}`)
   return new Promise<string>((resolve, reject) => {
     cp.exec(cmd, (err, stdout, stderr) => {
-      if (err) {
-        Log.error(`error: ${err}`)
-        reject(err)
+      if (err || stderr) {
+        Log.error(`error: ${err} ${stderr}`)
+        reject(err || stderr)
       }
       else {
         resolve(stdout)
