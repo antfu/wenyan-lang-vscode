@@ -2,7 +2,7 @@
   "name": "wenyan-lang",
   "displayName": "文言 Wenyan Lang",
   "description": "文言 Wenyan Lang for VSCode",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "publisher": "antfu",
   "engines": {
     "vscode": "^1.40.0"

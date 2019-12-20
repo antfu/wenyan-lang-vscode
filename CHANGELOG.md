@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.2](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.1...v0.7.2) (2019-12-20)
+
+
+### ⚡ Features
+
+* support for recent added object literal ([44eb8c8](https://github.com/antfu/wenyan-lang-vscode/commit/44eb8c8625386c5a187006878230cb00b6518580))
+
 ### [0.7.1](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.0...v0.7.1) (2019-12-19)
 
 
