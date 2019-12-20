@@ -33,7 +33,7 @@ function onTextChanged (e: TextDocumentChangeEvent) {
   if (document.languageId !== LANG_ID)
     return
 
-  if (!e.contentChanges[0])
+  if (!e.contentChanges[0]?.text)
     return
 
   const selection = editor.selection
@@ -44,6 +44,10 @@ function onTextChanged (e: TextDocumentChangeEvent) {
   for (const define of Object.values(DynamicSnippets)) {
     for (const prefix of define.prefix) {
       if (text.endsWith(prefix)) {
+        const t = text.slice(-prefix.length - 1, -prefix.length)
+        if (t.match(/[\d\w\.\_]/))
+          continue // if the input is after an english letter or number, do not replace
+
         const range = new Range(currentPosition.translate(0, -prefix.length), currentPosition)
         const { parsed, shiftBack } = parseBody(define.body)
 

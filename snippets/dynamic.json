@@ -10,7 +10,8 @@
   },
   "double-quote-full-width-left": {
     "prefix": [
-      "“"
+      "“",
+      "{"
     ],
     "body": [
       "「「"
@@ -19,7 +20,8 @@
   },
   "double-quote-full-width-right": {
     "prefix": [
-      "”"
+      "”",
+      "}"
     ],
     "body": [
       "」"
@@ -37,7 +39,8 @@
   },
   "single-quote-full-width-left": {
     "prefix": [
-      "‘"
+      "‘",
+      "["
     ],
     "body": [
       "「"
@@ -46,7 +49,8 @@
   },
   "single-quote-full-width-right": {
     "prefix": [
-      "’"
+      "’",
+      "]"
     ],
     "body": [
       "」"
@@ -58,7 +62,7 @@
       "//"
     ],
     "body": [
-      "批曰。「「$1」」"
+      "批曰。"
     ],
     "description": "批注"
   },
