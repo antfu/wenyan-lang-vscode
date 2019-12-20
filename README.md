@@ -29,13 +29,6 @@ View the compiled Javascript side by side or Direct execute it.
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-execute.png)
 
 
-### Snippets
-
-You can write Wenyan quickly by using snippets:
-
-![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-snippets.gif)
-
-
 ### Punctuations Replacement
 
 Punctuations will be automatically replaced to fit the language.
@@ -43,6 +36,30 @@ Punctuations will be automatically replaced to fit the language.
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-punctuations.gif)
 
 *You will get the result immediately, the delay is added for demostraction purpose*
+
+
+### Snippets
+
+You can write Wenyan quickly by using snippets:
+
+![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-snippets.gif)
+
+Here are some common snippets. For full list, check out [this file](https://github.com/antfu/wenyan-lang-vscode/blob/master/snippets/static.json).
+
+| Triggers | Snippet |
+| --- | --- |
+| `if` | `若⋯者。⋯也。` |
+| `else` | `若非。⋯也。` |
+| `for` | `為是⋯遍。⋯云云。` |
+| `break` | `乃止。` |
+| `while` | `恆為是。⋯云云。` |
+| `function` | `吾有一術。名之曰「⋯」。是術曰。` |
+| `int` | `吾有一數。曰⋯。名之曰「⋯」。` |
+| `str` | `吾有一言。曰「「⋯」」。名之曰「⋯」。` |
+| `bool` | `吾有一爻。曰陰。名之曰「⋯」。` |
+| `array` | `吾有一列。名之曰「⋯」。` |
+| `object` | `吾有一物。名之曰「⋯」。` |
+
 
 ### Configurations
 

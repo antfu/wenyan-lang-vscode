@@ -18,10 +18,7 @@ async function getCompiledResult (filepath: string, target: SupportTargetLanguag
 }
 
 async function getExecResult (filepath: string, target: SupportTargetLanguage) {
-  const result = await Exec(filepath, { exec: true, lang: target }) || ''
-
-  // remove first line or compiled code
-  return result.split('\n').slice(1).join('\n')
+  return await Exec(filepath, { exec: true, lang: target }) || ''
 }
 
 class DocumentProvider implements TextDocumentContentProvider {

@@ -37,7 +37,7 @@
         },
         {
           "name": "storage.type",
-          "match": "數|列|言|術|爻"
+          "match": "數|列|言|術|爻|物"
         },
         {
           "name": "keyword.control",
@@ -49,7 +49,7 @@
         },
         {
           "name": "keyword.control",
-          "match": "乃得|乃歸空無|是謂|之術也|必先得|是術曰|乃行是術曰|欲行是術|也|云云|凡|中之|恆為是|為是|遍|乃止"
+          "match": "乃得|乃歸空無|是謂|之術也|必先得|是術曰|乃行是術曰|欲行是術|也|云云|凡|中之|恆為是|為是|遍|乃止|其物如是"
         },
         {
           "name": "keyword.operator",
@@ -61,7 +61,7 @@
         },
         {
           "name": "keyword.operator",
-          "match": "昔之|今|是矣|其"
+          "match": "昔之|今|是矣|其|不復存矣"
         },
         {
           "name": "keyword.other",
