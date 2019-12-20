@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.2...v0.7.3) (2019-12-20)
+
+
+### 🐞 Bug Fixes
+
+* problems in dynaimic snippets ([87b79c9](https://github.com/antfu/wenyan-lang-vscode/commit/87b79c9ef0ce121c1211fe7393a23f8b8241be85))
+
 ### [0.7.2](https://github.com/antfu/wenyan-lang-vscode/compare/v0.7.1...v0.7.2) (2019-12-20)
 
 
