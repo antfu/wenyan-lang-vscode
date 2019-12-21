@@ -18,7 +18,10 @@
       "include": "#expression"
     },
     {
-      "include": "#comments"
+      "include": "#comment-blocks"
+    },
+    {
+      "include": "#comment-lines"
     }
   ],
   "repository": {
@@ -57,11 +60,15 @@
         },
         {
           "name": "keyword.operator",
+          "match": "吾嘗觀|之書|方悟|之義"
+        },
+        {
+          "name": "keyword.operator",
           "match": "加|減|乘|除|中有陽乎|中無陰乎|變|所餘幾何|以|於|之長|之|充|銜|其餘"
         },
         {
           "name": "keyword.operator",
-          "match": "昔之|今|是矣|其|不復存矣"
+          "match": "昔之|今|是矣|其|不復存矣|是"
         },
         {
           "name": "keyword.other",
@@ -69,10 +76,21 @@
         }
       ]
     },
-    "comments": {
+    "comment-lines": {
       "name": "comment.line",
       "begin": "注曰|疏曰|批曰",
       "end": "$",
+      "patterns": [
+        {
+          "name": "constant.character",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comment-blocks": {
+      "name": "comment.block",
+      "begin": "(注曰|疏曰|批曰)。「「",
+      "end": "」」",
       "patterns": [
         {
           "name": "constant.character",
@@ -84,7 +102,7 @@
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "零|一|二|三|四|五|六|七|八|九|十|百|千|萬|億|兆|京|垓|秭|穣|溝|澗|正|載|極|恆河沙|阿僧祇|那由他|不可思議|無量大數|分|釐|毫|絲|忽|微|纖|沙|塵|埃|渺|漠|模糊|逡巡|須臾|瞬息|彈指|剎那|六德|虛|空|清|淨"
+          "match": "又|負|零|一|二|三|四|五|六|七|八|九|十|百|千|萬|億|兆|京|垓|秭|穣|溝|澗|正|載|極|恆河沙|阿僧祇|那由他|不可思議|無量大數|分|釐|毫|絲|忽|微|纖|沙|塵|埃|渺|漠|模糊|逡巡|須臾|瞬息|彈指|剎那|六德|虛|空|清|淨"
         },
         {
           "name": "constant.language",
