@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.5](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.4...v0.8.5) (2019-12-22)
+
+
+### 🌍 Internationalization
+
+* add support for zh-tw ([e7d36e9](https://github.com/antfu/wenyan-lang-vscode/commit/e7d36e92300cbef1d97a2be9f6e141c38edc30e7))
+
 ### [0.8.4](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.3...v0.8.4) (2019-12-22)
 
 
