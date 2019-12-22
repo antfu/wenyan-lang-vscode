@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.2](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.1...v0.8.2) (2019-12-22)
+
+
+### 🐞 Bug Fixes
+
+* vendored compiler ([e0836e0](https://github.com/antfu/wenyan-lang-vscode/commit/e0836e09a342a90a6c829873415bc1f178e2c7cf))
+
 ### [0.8.1](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.0...v0.8.1) (2019-12-22)
 
 
