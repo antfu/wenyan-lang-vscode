@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.4](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.3...v0.8.4) (2019-12-22)
+
+
+### 🔮 Refactor
+
+* first input title then save, [#8](https://github.com/antfu/wenyan-lang-vscode/issues/8) thanks [@imgss](https://github.com/imgss) ([1c41b6e](https://github.com/antfu/wenyan-lang-vscode/commit/1c41b6e51d0deec8dad796d8aaf4e4db5c0b26ae))
+* use title as the default filename for render ([74cbca2](https://github.com/antfu/wenyan-lang-vscode/commit/74cbca21b56d595a765ef8b1b38b942adc9a2099))
+
 ### [0.8.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.2...v0.8.3) (2019-12-22)
 
 
