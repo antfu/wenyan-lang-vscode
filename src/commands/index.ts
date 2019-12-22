@@ -41,7 +41,7 @@ const m: ExtensionModule = () => {
 
       const { name: defaultTitle } = path.parse(document.uri.fsPath)
       const title = await window.showInputBox({
-        prompt: i18n.t('prompt.enter_the_title_for_rendering'), // TODO: i18n
+        prompt: i18n.t('prompt.enter_the_title_for_rendering'),
         value: defaultTitle,
       })
       if (!title)
@@ -60,7 +60,7 @@ const m: ExtensionModule = () => {
       if (filenames.length) {
         const openInEditor = i18n.t('prompt.open_in_vscode')
         const openInImageViewer = i18n.t('prompt.open_in_viewer')
-        const result = await window.showInformationMessage(i18n.t('prompt.successfully_rendered'), openInEditor, openInImageViewer)
+        const result = await window.showInformationMessage(i18n.t('prompt.successfully_rendered'), { modal: true }, openInEditor, openInImageViewer)
         if (result === openInEditor)
           window.showTextDocument(await workspace.openTextDocument(Uri.file(filenames[0])))
         if (result === openInImageViewer)

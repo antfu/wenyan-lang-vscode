@@ -7,7 +7,7 @@ export type SupportTargetLanguage = 'py' | 'js'
 
 export class Config {
   static get executablePath () {
-    return this.getConfig<string>('executablePath') || path.resolve(getCTX().extensionPath, 'node_modules/@wenyanlang/cli/index.min.js')
+    return this.getConfig<string>('executablePath') || path.resolve(getCTX().extensionPath, 'dist/wenyan.js')
   }
 
   static get targetLanguage (): SupportTargetLanguage {
