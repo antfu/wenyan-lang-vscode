@@ -39,6 +39,14 @@ const m: ExtensionModule = () => {
       if (document?.languageId !== LANG_ID)
         return
 
+      const { name: defaultTitle } = path.parse(document.uri.fsPath)
+      const title = await window.showInputBox({
+        prompt: i18n.t('prompt.enter_the_title_for_rendering'), // TODO: i18n
+        value: defaultTitle,
+      })
+      if (!title)
+        return
+
       const defaultUri = Uri.file(document.uri.fsPath.replace(/\.wy$/, '.svg'))
       const uri = await window.showSaveDialog({
         defaultUri,
@@ -47,18 +55,8 @@ const m: ExtensionModule = () => {
       if (!uri)
         return
 
-      const { name: defaultTitle } = path.parse(uri.fsPath)
-      const title = await window.showInputBox({
-        prompt: i18n.t('prompt.enter_the_title_for_rendering'), // TODO: i18n
-        value: defaultTitle,
-      })
-      if (!title)
-        return
-
       const output = await Exec(document.uri.fsPath, { render: title, output: uri.fsPath }) || ''
-
       const filenames = output.split('\n').map(i => i.trim()).filter(i => i)
-
       if (filenames.length) {
         const openInEditor = i18n.t('prompt.open_in_vscode')
         const openInImageViewer = i18n.t('prompt.open_in_viewer')
