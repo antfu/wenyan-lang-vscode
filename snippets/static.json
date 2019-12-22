@@ -201,5 +201,25 @@
       "所餘幾何。"
     ],
     "description": "所餘幾何"
+  },
+  "require": {
+    "prefix": [
+      "require",
+      "吾嘗觀"
+    ],
+    "body": [
+      "吾嘗觀「「$1」」之書。"
+    ],
+    "description": "吾嘗觀⋯之書"
+  },
+  "require-expand": {
+    "prefix": [
+      "require",
+      "吾嘗觀"
+    ],
+    "body": [
+      "吾嘗觀「「$1」」之書。方悟$2{: }之義。"
+    ],
+    "description": "吾嘗觀⋯之書。方悟⋯之義"
   }
 }

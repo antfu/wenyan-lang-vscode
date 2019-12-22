@@ -28,8 +28,7 @@ export function getOptionsString (options?: ExecuteOptions) {
   return parts.join(' ')
 }
 
-export function Exec (filename: string, options?: ExecuteOptions) {
-  const cmd = `node "${Config.executablePath}" "${filename}" ${getOptionsString(options)}`
+export async function Run (cmd: string) {
   Log.info(`💻 ${cmd}`)
   return new Promise<string>((resolve, reject) => {
     cp.exec(cmd, (err, stdout, stderr) => {
@@ -42,4 +41,12 @@ export function Exec (filename: string, options?: ExecuteOptions) {
       }
     })
   })
+}
+
+export function Exec (filename: string, options?: ExecuteOptions) {
+  return Run(`node "${Config.executablePath}" "${filename}" ${getOptionsString(options)}`)
+}
+
+export function GetExecutableVersion () {
+  return Run(`node "${Config.executablePath}" -v`)
 }
