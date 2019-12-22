@@ -47,9 +47,9 @@ export function Exec (filename: string, options?: ExecuteOptions) {
   return Run(`node "${Config.executablePath}" "${filename}" ${getOptionsString(options)}`)
 }
 
-export function GetExecutableVersion () {
+export async function GetExecutableVersion () {
   try {
-    return Run(`node "${Config.executablePath}" -v`)
+    return `v${await Run(`node "${Config.executablePath}" -v`)}`
   }
   catch (e) {
     Log.error('Failed to get compiler version')
