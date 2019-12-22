@@ -20,5 +20,3 @@ tsconfig.json
 tslint.json
 webpack.config.js
 renovate.json
-
-!node_modules/@wenyanlang/cli/index.min.js
