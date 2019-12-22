@@ -47,7 +47,7 @@ const m: ExtensionModule = () => {
       if (!title)
         return
 
-      const defaultUri = Uri.file(document.uri.fsPath.replace(/\.wy$/, '.svg'))
+      const defaultUri = Uri.file(path.join(path.dirname(document.uri.fsPath), `${title}.svg`))
       const uri = await window.showSaveDialog({
         defaultUri,
         filters: { SVG: ['svg'] },
