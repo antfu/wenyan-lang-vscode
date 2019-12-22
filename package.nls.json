@@ -1,6 +1,6 @@
 {
-  "command.compile": "Compile Script",
-  "command.execute": "Execute Script",
+  "command.compile": "Compile script",
+  "command.execute": "Execute script",
   "command.reload": "Reload Result",
   "command.render": "Render Document",
   "config.executable_path": "Filepath to executable `wenyan.js`",

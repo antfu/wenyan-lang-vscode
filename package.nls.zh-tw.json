@@ -1,0 +1,14 @@
+{
+  "command.compile": "編譯腳本",
+  "command.execute": "執行腳本",
+  "command.reload": "重新加載",
+  "command.render": "渲染文件",
+  "config.executable_path": "編譯器 wenyan.js 的文件路徑",
+  "config.run_on_save": "保存文件時執行代碼",
+  "config.target_language": "編譯目標語言",
+  "extname": "文言 Wenyan",
+  "prompt.enter_the_title_for_rendering": "輸入渲染用的文章標題",
+  "prompt.open_in_viewer": "用預設程式查看",
+  "prompt.open_in_vscode": "用VSCode查看",
+  "prompt.successfully_rendered": "渲染成功！"
+}
