@@ -48,5 +48,11 @@ export function Exec (filename: string, options?: ExecuteOptions) {
 }
 
 export function GetExecutableVersion () {
-  return Run(`node "${Config.executablePath}" -v`)
+  try {
+    return Run(`node "${Config.executablePath}" -v`)
+  }
+  catch (e) {
+    Log.error('Failed to get compiler version')
+    return 'Unknown'
+  }
 }

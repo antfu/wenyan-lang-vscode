@@ -4,8 +4,10 @@ import documentProvider from './editor/documentProvider'
 import fileSavingWatcher from './editor/fileSavingWatcher'
 import commands from './commands'
 import { setCTX } from './ctx'
+import { Log } from './log'
+import { GetExecutableVersion } from './exec'
 
-export function activate (ctx: ExtensionContext) {
+export async function activate (ctx: ExtensionContext) {
   setCTX(ctx)
 
   const modules = [
@@ -17,6 +19,8 @@ export function activate (ctx: ExtensionContext) {
 
   const disposables = modules.flatMap(m => m(ctx))
   disposables.forEach(d => ctx.subscriptions.push(d))
+
+  Log.info(`Activated with compiler ${await GetExecutableVersion()}`)
 }
 
 export function deactivate () {
