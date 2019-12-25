@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.5...v0.9.0) (2019-12-25)
+
+
+### ⚡ Features
+
+* settings for romanizeMethod ([9f80526](https://github.com/antfu/wenyan-lang-vscode/commit/9f805262b236d6eb06c4cf1510d1c05d0a30e4b8))
+* support for compile to ruby ([263a831](https://github.com/antfu/wenyan-lang-vscode/commit/263a83171cd12c24a991ec15c074e5d07a654257))
+
 ### [0.8.5](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.4...v0.8.5) (2019-12-22)
 
 
