@@ -144,7 +144,8 @@
             "type": "string",
             "enum": [
               "javascript",
-              "python"
+              "python",
+              "ruby"
             ],
             "default": "javascript",
             "description": "%config.target_language%"

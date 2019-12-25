@@ -3,7 +3,7 @@ import { workspace } from 'vscode'
 import { EXT_NAMESPACE } from './meta'
 import { getCTX } from './ctx'
 
-export type SupportTargetLanguage = 'py' | 'js'
+export type SupportTargetLanguage = 'py' | 'js' | 'rb'
 
 export class Config {
   static get executablePath () {
@@ -11,8 +11,11 @@ export class Config {
   }
 
   static get targetLanguage (): SupportTargetLanguage {
-    if (this.getConfig<string>('targetLanguage') === 'python')
+    const value = this.getConfig<string>('targetLanguage')
+    if (value === 'python')
       return 'py'
+    if (value === 'ruby')
+      return 'rb'
     else
       return 'js'
   }
