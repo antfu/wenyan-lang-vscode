@@ -9,7 +9,7 @@ import { Exec } from '../exec'
 import { optimize } from '../misc/optimize'
 
 async function getCompiledResult (filepath: string, target: SupportTargetLanguage) {
-  const result = await Exec(filepath, { lang: target }) || ''
+  const result = await Exec(filepath, { lang: target, compile: true }) || ''
 
   if (target === 'py')
     return result
@@ -18,7 +18,7 @@ async function getCompiledResult (filepath: string, target: SupportTargetLanguag
 }
 
 async function getExecResult (filepath: string, target: SupportTargetLanguage) {
-  return await Exec(filepath, { exec: true, lang: target }) || ''
+  return await Exec(filepath, { lang: target }) || ''
 }
 
 class DocumentProvider implements TextDocumentContentProvider {

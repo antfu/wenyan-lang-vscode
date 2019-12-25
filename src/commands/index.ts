@@ -55,7 +55,7 @@ const m: ExtensionModule = () => {
       if (!uri)
         return
 
-      const output = await Exec(document.uri.fsPath, { render: title, output: uri.fsPath }) || ''
+      const output = await Exec(document.uri.fsPath, { render: true, title, output: uri.fsPath }) || ''
       const filenames = output.split('\n').map(i => i.trim()).filter(i => i)
       if (filenames.length) {
         const openInEditor = i18n.t('prompt.open_in_vscode')

@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-for <a href='https://github.com/LingDong-/wenyan-lang' target="__blank">文言 Wenyan Lang, a programming language for the ancient Chinese.</a>
+Collection of essential Vue Composition API (inspired by <a href='https://github.com/streamich/react-use' target='__blank'>react-use<a>)
 </p>
 
 ![](https://github.com/antfu/wenyan-lang-vscode/raw/master/screenshots/demo-highlight.png)

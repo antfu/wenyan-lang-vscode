@@ -3,10 +3,11 @@ import { Log } from './log'
 import { Config, SupportTargetLanguage } from './config'
 
 export interface ExecuteOptions {
-  exec?: boolean
+  compile?: boolean
   lang?: SupportTargetLanguage
   roman?: string
-  render?: string
+  render?: boolean
+  title?: string
   output?: string
 }
 
@@ -20,8 +21,6 @@ export function getOptionsString (options?: ExecuteOptions) {
       parts.push(`--${key}`)
       if (typeof options[key] === 'string')
         parts.push(`"${options[key]}"`)
-      else
-        parts.push(options[key])
     }
   }
 
