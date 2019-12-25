@@ -68,7 +68,7 @@ Here are some common snippets. For full list, check out [this file](https://gith
 | `wenyan-lang.executablePath` | built-in | Filepath to executable `wenyan.js` |
 | `wenyan-lang.targetLanguage` | `javascript` | Target language that compiles to. Can be `javascript`, `python` or `ruby` |
 | `wenyan-lang.runOnSave` | true | Execute the code on save |
-
+| `wenyan-lang.romanizeMethod` | null | Romanize identifiers. The method can be `pinyin`, `baxter` or `unicode` |
 
 ## ToDo
 

@@ -1,4 +1,5 @@
 import cp from 'child_process'
+import path from 'path'
 import { Log } from './log'
 import { Config, SupportTargetLanguage } from './config'
 
@@ -27,10 +28,10 @@ export function getOptionsString (options?: ExecuteOptions) {
   return parts.join(' ')
 }
 
-export async function Run (cmd: string) {
+export async function Run (cmd: string, cwd?: string) {
   Log.info(`💻 ${cmd}`)
   return new Promise<string>((resolve, reject) => {
-    cp.exec(cmd, (err, stdout, stderr) => {
+    cp.exec(cmd, { cwd }, (err, stdout, stderr) => {
       if (err || stderr) {
         Log.error(`error: ${err} ${stderr}`)
         reject(err || stderr)
@@ -43,7 +44,7 @@ export async function Run (cmd: string) {
 }
 
 export function Exec (filename: string, options?: ExecuteOptions) {
-  return Run(`node "${Config.executablePath}" "${filename}" ${getOptionsString(options)}`)
+  return Run(`node "${Config.executablePath}" "${filename}" ${getOptionsString(options)}`, path.dirname(filename))
 }
 
 export async function GetExecutableVersion () {

@@ -3,13 +3,17 @@ import prettier from 'prettier/standalone'
 import parserBabel from 'prettier/parser-babylon'
 import { parseQuery } from '../utils'
 import { DOC_SCHEMA } from '../meta'
-import { SupportTargetLanguage } from '../config'
+import { SupportTargetLanguage, Config } from '../config'
 import { ExtensionModule } from '../module'
 import { Exec } from '../exec'
 import { optimize } from '../misc/optimize'
 
 async function getCompiledResult (filepath: string, target: SupportTargetLanguage) {
-  const result = await Exec(filepath, { lang: target, compile: true }) || ''
+  const result = await Exec(filepath, {
+    lang: target,
+    compile: true,
+    roman: Config.romanizeMethod,
+  }) || ''
 
   if (target === 'py')
     return result
@@ -18,7 +22,10 @@ async function getCompiledResult (filepath: string, target: SupportTargetLanguag
 }
 
 async function getExecResult (filepath: string, target: SupportTargetLanguage) {
-  return await Exec(filepath, { lang: target }) || ''
+  return await Exec(filepath, {
+    lang: target,
+    roman: Config.romanizeMethod,
+  }) || ''
 }
 
 class DocumentProvider implements TextDocumentContentProvider {

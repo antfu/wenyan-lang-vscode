@@ -154,6 +154,16 @@
             "type": "boolean",
             "default": true,
             "description": "%config.run_on_save%"
+          },
+          "wenyan-lang.romanizeMethod": {
+            "type": "string",
+            "enum": [
+              "pinyin",
+              "baxter",
+              "unicode"
+            ],
+            "default": null,
+            "description": "%config.run_on_save%"
           }
         }
       }

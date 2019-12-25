@@ -24,6 +24,10 @@ export class Config {
     return this.getConfig<boolean>('runOnSave') || false
   }
 
+  static get romanizeMethod () {
+    return this.getConfig<string|null>('romanizeMethod') || undefined
+  }
+
   private static getConfig<T = any> (key: string): T | undefined {
     const config = workspace
       .getConfiguration(EXT_NAMESPACE)
