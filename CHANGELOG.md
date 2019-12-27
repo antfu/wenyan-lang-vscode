@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.9.1...v0.10.0) (2019-12-27)
+
+
+### ⚡ Features
+
+* add icon for wenyanizer ([c65f0ea](https://github.com/antfu/wenyan-lang-vscode/commit/c65f0ea8a0cf7219b424d4c89a3cbf72b0672704))
+* support for wenyanize ([b6c09e9](https://github.com/antfu/wenyan-lang-vscode/commit/b6c09e97dc8e850f3ceaf1f923650531bbe6001c))
+
+
+### 🐞 Bug Fixes
+
+* improve stablity ([15d6a58](https://github.com/antfu/wenyan-lang-vscode/commit/15d6a5892ef430252a465230b9860d1c5ee06921))
+
 ### [0.9.1](https://github.com/antfu/wenyan-lang-vscode/compare/v0.9.0...v0.9.1) (2019-12-27)
 
 ## [0.9.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.8.5...v0.9.0) (2019-12-25)
