@@ -60,6 +60,12 @@ Here are some common snippets. For full list, check out [this file](https://gith
 | `array` | `吾有一列。名之曰「⋯」。` |
 | `object` | `吾有一物。名之曰「⋯」。` |
 
+### [Wenyanizer](https://github.com/zxch3n/wenyanizer) by [@zxch3n](https://github.com/zxch3n)
+
+From `v0.10.0`, we shipped support for compiling Javascript back to Wenyan. Thanks for @zxch3n's great work!
+
+![](https://user-images.githubusercontent.com/11247099/71503497-64e05500-28b0-11ea-978a-782a9181f44d.png)
+
 
 ### Configurations
 
