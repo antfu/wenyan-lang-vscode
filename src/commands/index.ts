@@ -14,7 +14,7 @@ const m: ExtensionModule = () => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
         return
-      const uri = getResultUrl(document.uri.fsPath, 'execute', Config.targetLanguage)
+      const uri = getResultUrl(document, 'execute', Config.targetLanguage)
       documentProvider.onDidChangeEmitter.fire(uri)
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
@@ -23,7 +23,7 @@ const m: ExtensionModule = () => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
         return
-      const uri = getResultUrl(document.uri.fsPath, 'compile', Config.targetLanguage)
+      const uri = getResultUrl(document, 'compile', Config.targetLanguage)
       documentProvider.onDidChangeEmitter.fire(uri)
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
@@ -32,7 +32,7 @@ const m: ExtensionModule = () => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== 'javascript')
         return
-      const uri = getResultUrl(document.uri.fsPath, 'wenyanize', Config.targetLanguage)
+      const uri = getResultUrl(document, 'wenyanize', Config.targetLanguage)
       documentProvider.onDidChangeEmitter.fire(uri)
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
@@ -64,7 +64,7 @@ const m: ExtensionModule = () => {
       if (!uri)
         return
 
-      const output = await Exec(document.uri.fsPath, { render: true, title, output: uri.fsPath }) || ''
+      const output = await Exec(document.uri.fsPath, document.getText(), { render: true, title, output: uri.fsPath }) || ''
       const filenames = output.split('\n').map(i => i.trim()).filter(i => i)
       if (filenames.length) {
         const openInEditor = i18n.t('prompt.open_in_vscode')

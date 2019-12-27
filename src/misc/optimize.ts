@@ -58,4 +58,6 @@ export function optimize (src: string) {
   }
 
   return out
+    .replace(/\*\//g, '*/\n')
+    .replace(/\/\*/g, '\n/*')
 }

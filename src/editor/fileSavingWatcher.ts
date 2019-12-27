@@ -9,12 +9,13 @@ const m: ExtensionModule = () => {
   return workspace.onDidSaveTextDocument((doc) => {
     if (!Config.runOnSave)
       return
-    if (doc.languageId !== LANG_ID)
-      return
-
-    console.log(doc.uri.fsPath)
-    documentProvider.onDidChangeEmitter.fire(getResultUrl(doc.uri.fsPath, 'execute'))
-    documentProvider.onDidChangeEmitter.fire(getResultUrl(doc.uri.fsPath, 'compile'))
+    if (doc.languageId === LANG_ID) {
+      documentProvider.onDidChangeEmitter.fire(getResultUrl(doc, 'execute'))
+      documentProvider.onDidChangeEmitter.fire(getResultUrl(doc, 'compile'))
+    }
+    else if (doc.languageId === 'javascript') {
+      documentProvider.onDidChangeEmitter.fire(getResultUrl(doc, 'wenyanize'))
+    }
   })
 }
 

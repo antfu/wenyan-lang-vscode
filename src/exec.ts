@@ -43,8 +43,8 @@ export async function Run (cmd: string, cwd?: string) {
   })
 }
 
-export function Exec (filename: string, options?: ExecuteOptions) {
-  return Run(`node "${Config.executablePath}" "${filename}" ${getOptionsString(options)}`, path.dirname(filename))
+export function Exec (filepath: string | undefined, content: string, options?: ExecuteOptions) {
+  return Run(`node "${Config.executablePath}" ${getOptionsString(options)} -e "${content.replace(/\n/g, '')}"`, filepath ? path.dirname(filepath) : undefined)
 }
 
 export async function GetExecutableVersion () {

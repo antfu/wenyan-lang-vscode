@@ -1,6 +1,6 @@
 import { exec } from 'child_process'
 import path from 'path'
-import { Uri } from 'vscode'
+import { Uri, TextDocument } from 'vscode'
 import { ResultActions, DOC_SCHEMA } from './meta'
 import { SupportTargetLanguage, Config } from './config'
 
@@ -24,8 +24,9 @@ export function openInDefaultViewer (filename: string) {
   exec(`${open} ${filename}`)
 }
 
-export function getResultUrl (filepath: string, action: ResultActions, targetLanguage: SupportTargetLanguage = Config.targetLanguage) {
-  const { name } = path.parse(filepath)
+export function getResultUrl (document: TextDocument, action: ResultActions, targetLanguage: SupportTargetLanguage = Config.targetLanguage) {
+  const uri = document.uri
+  const { name } = path.parse(uri.fsPath)
   let filename = name
   switch (action) {
     case 'compile':
@@ -38,5 +39,5 @@ export function getResultUrl (filepath: string, action: ResultActions, targetLan
       filename = `${name}(Wenyanized).wy`
       break
   }
-  return Uri.parse(`${DOC_SCHEMA}:${filename}?action=${action}&filepath=${encodeURIComponent(filepath)}&target=${targetLanguage}`)
+  return Uri.parse(`${DOC_SCHEMA}:${filename}?action=${action}&path=${encodeURIComponent(uri.path)}&target=${targetLanguage}`)
 }
