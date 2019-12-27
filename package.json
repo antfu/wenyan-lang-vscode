@@ -94,8 +94,8 @@
         "title": "%command.wenyanize%",
         "category": "%extname%",
         "icon": {
-          "dark": "./res/dark/code.svg",
-          "light": "./res/light/code.svg"
+          "dark": "./res/dark/wenyan.svg",
+          "light": "./res/light/wenyan.svg"
         }
       }
     ],
