@@ -26,6 +26,17 @@ export function openInDefaultViewer (filename: string) {
 
 export function getResultUrl (filepath: string, action: ResultActions, targetLanguage: SupportTargetLanguage = Config.targetLanguage) {
   const { name } = path.parse(filepath)
-  const filename = action === 'execute' ? `${name}(Output)` : `${name}(Compiled).${targetLanguage}`
+  let filename = name
+  switch (action) {
+    case 'compile':
+      filename = `${name}(Compiled).${targetLanguage}`
+      break
+    case 'execute':
+      filename = `${name}(Output)`
+      break
+    case 'wenyanize':
+      filename = `${name}(Wenyanized).wy`
+      break
+  }
   return Uri.parse(`${DOC_SCHEMA}:${filename}?action=${action}&filepath=${encodeURIComponent(filepath)}&target=${targetLanguage}`)
 }

@@ -1,8 +1,9 @@
 import { TextDocumentContentProvider, Uri, workspace, EventEmitter } from 'vscode'
 import prettier from 'prettier/standalone'
 import parserBabel from 'prettier/parser-babylon'
+import { js2wy } from 'wenyanizer'
 import { parseQuery } from '../utils'
-import { DOC_SCHEMA } from '../meta'
+import { DOC_SCHEMA, ResultActions } from '../meta'
 import { SupportTargetLanguage, Config } from '../config'
 import { ExtensionModule } from '../module'
 import { Exec } from '../exec'
@@ -28,6 +29,17 @@ async function getExecResult (filepath: string, target: SupportTargetLanguage) {
   }) || ''
 }
 
+async function readFile (filepath: string) {
+  const uri = Uri.file(filepath)
+  const document = await workspace.openTextDocument(uri)
+  return document.getText()
+}
+
+async function getWenyanizeResult (filepath: string) {
+  const content = await readFile(filepath)
+  return js2wy(content)
+}
+
 class DocumentProvider implements TextDocumentContentProvider {
   onDidChangeEmitter = new EventEmitter<Uri>()
   onDidChange = this.onDidChangeEmitter.event
@@ -35,13 +47,15 @@ class DocumentProvider implements TextDocumentContentProvider {
   async provideTextDocumentContent (uri: Uri) {
     const query = parseQuery(uri.query)
     const filepath = query.filepath
-    const action = query.action
+    const action = query.action as ResultActions
     const target = query.target as SupportTargetLanguage
 
     if (!filepath || !action)
       return ''
 
     try {
+      if (action === 'wenyanize')
+        return await getWenyanizeResult(filepath)
       if (action === 'execute')
         return await getExecResult(filepath, target)
       if (action === 'compile')

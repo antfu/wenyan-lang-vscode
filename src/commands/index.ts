@@ -28,6 +28,15 @@ const m: ExtensionModule = () => {
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
 
+    commands.registerCommand(CommandKeys.wenyanize, async () => {
+      const document = window.activeTextEditor?.document
+      if (document?.languageId !== 'javascript')
+        return
+      const uri = getResultUrl(document.uri.fsPath, 'wenyanize', Config.targetLanguage)
+      documentProvider.onDidChangeEmitter.fire(uri)
+      window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
+    }),
+
     commands.registerCommand(CommandKeys.reload, async () => {
       const document = window.activeTextEditor?.document
       if (document?.uri.scheme === DOC_SCHEMA)

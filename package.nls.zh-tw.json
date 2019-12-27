@@ -3,6 +3,7 @@
   "command.execute": "執行腳本",
   "command.reload": "重新加載",
   "command.render": "渲染文件",
+  "command.wenyanize": "編譯回文言",
   "config.executable_path": "編譯器 wenyan.js 的文件路徑",
   "config.run_on_save": "保存文件時執行代碼",
   "config.target_language": "編譯目標語言",

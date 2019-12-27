@@ -15,7 +15,10 @@
   },
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "cSpell.words": [
-    "wenyan"
+    "Wenyanized",
+    "wenyan",
+    "wenyanize",
+    "wenyanizer"
   ],
   "i18n-ally.localesPaths": ".",
   "i18n-ally.sourceLanguage": "en",

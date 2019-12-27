@@ -12,7 +12,8 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onLanguage:wenyan"
+    "onLanguage:wenyan",
+    "onLanguage:javascript"
   ],
   "keywords": [
     "wenyan",
@@ -87,6 +88,15 @@
           "dark": "./res/dark/device-camera.svg",
           "light": "./res/light/device-camera.svg"
         }
+      },
+      {
+        "command": "extension.wenyan-lang.wenyanize",
+        "title": "%command.wenyanize%",
+        "category": "%extname%",
+        "icon": {
+          "dark": "./res/dark/code.svg",
+          "light": "./res/light/code.svg"
+        }
       }
     ],
     "menus": {
@@ -110,24 +120,29 @@
       ],
       "editor/title": [
         {
-          "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.render",
-          "group": "navigation@1170"
+          "group": "navigation@1170",
+          "when": "resourceLangId == wenyan"
         },
         {
-          "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.compile",
-          "group": "navigation@1171"
+          "group": "navigation@1171",
+          "when": "resourceLangId == wenyan"
         },
         {
-          "when": "resourceLangId == wenyan",
           "command": "extension.wenyan-lang.execute",
-          "group": "navigation@1172"
+          "group": "navigation@1172",
+          "when": "resourceLangId == wenyan"
         },
         {
           "command": "extension.wenyan-lang.reload",
           "group": "navigation",
           "when": "resourceScheme == wenyan"
+        },
+        {
+          "command": "extension.wenyan-lang.wenyanize",
+          "group": "navigation",
+          "when": "resourceLangId == javascript"
         }
       ]
     },
@@ -233,7 +248,8 @@
     "ts-loader": "6.2.1",
     "typescript": "^3.7.4",
     "webpack": "4.41.4",
-    "webpack-cli": "3.3.10"
+    "webpack-cli": "3.3.10",
+    "wenyanizer": "^0.2.6"
   },
   "dependencies": {}
 }

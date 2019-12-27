@@ -3,6 +3,7 @@
   "command.execute": "Execute script",
   "command.reload": "Reload Result",
   "command.render": "Render Document",
+  "command.wenyanize": "Compile back to Wenyan",
   "config.executable_path": "Filepath to executable `wenyan.js`",
   "config.run_on_save": "Execute the code on save",
   "config.target_language": "Target language that compiles to",

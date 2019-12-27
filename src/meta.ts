@@ -9,6 +9,7 @@ export enum CommandKeys {
   compile = 'extension.wenyan-lang.compile',
   reload = 'extension.wenyan-lang.reload',
   render = 'extension.wenyan-lang.render',
+  wenyanize = 'extension.wenyan-lang.wenyanize',
 }
 
-export type ResultActions = 'execute' | 'compile'
+export type ResultActions = 'execute' | 'compile' | 'wenyanize'
