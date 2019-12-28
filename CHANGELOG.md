@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.1](https://github.com/antfu/wenyan-lang-vscode/compare/v0.10.0...v0.10.1) (2019-12-28)
+
+
+### ⚡ Features
+
+* script executing for untitled files, [#9](https://github.com/antfu/wenyan-lang-vscode/issues/9) ([08b21be](https://github.com/antfu/wenyan-lang-vscode/commit/08b21bea582fa47c573e4e2587385a0171b8e8b6))
+
+
+### 📚 Documentations
+
+* update readme ([21be1d0](https://github.com/antfu/wenyan-lang-vscode/commit/21be1d0369f79b76f443e0bf90aa9c76970d46b3))
+
 ## [0.10.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.9.1...v0.10.0) (2019-12-27)
 
 
