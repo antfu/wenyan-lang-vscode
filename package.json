@@ -122,17 +122,17 @@
         {
           "command": "extension.wenyan-lang.render",
           "group": "navigation@1170",
-          "when": "resourceLangId == wenyan && resourceScheme != wenyan"
+          "when": "editorLangId == wenyan && resourceScheme != wenyan"
         },
         {
           "command": "extension.wenyan-lang.compile",
           "group": "navigation@1171",
-          "when": "resourceLangId == wenyan && resourceScheme != wenyan"
+          "when": "editorLangId == wenyan && resourceScheme != wenyan"
         },
         {
           "command": "extension.wenyan-lang.execute",
           "group": "navigation@1172",
-          "when": "resourceLangId == wenyan && resourceScheme != wenyan"
+          "when": "editorLangId == wenyan && resourceScheme != wenyan"
         },
         {
           "command": "extension.wenyan-lang.reload",
@@ -142,7 +142,7 @@
         {
           "command": "extension.wenyan-lang.wenyanize",
           "group": "navigation",
-          "when": "resourceLangId == javascript && resourceScheme != wenyan"
+          "when": "editorLangId == javascript && resourceScheme != wenyan"
         }
       ]
     },

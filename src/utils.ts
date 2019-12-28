@@ -39,5 +39,10 @@ export function getResultUrl (document: TextDocument, action: ResultActions, tar
       filename = `${name}(Wenyanized).wy`
       break
   }
-  return Uri.parse(`${DOC_SCHEMA}:${filename}?action=${action}&path=${encodeURIComponent(uri.path)}&target=${targetLanguage}`)
+
+  const docPath = uri.scheme === 'untitled' // hack for untitled files
+    ? `untitled:${uri.path}`
+    : uri.path
+
+  return Uri.parse(`${DOC_SCHEMA}:${filename}?action=${action}&path=${encodeURIComponent(docPath)}&target=${targetLanguage}`)
 }
