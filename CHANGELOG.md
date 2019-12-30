@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.4](https://github.com/antfu/wenyan-lang-vscode/compare/v0.10.3...v0.10.4) (2019-12-30)
+
+
+### 🐞 Bug Fixes
+
+* update grammer ([652a6cf](https://github.com/antfu/wenyan-lang-vscode/commit/652a6cff73a61a84dd0cd35573f1bef0a431b0fd))
+
 ### [0.10.3](https://github.com/antfu/wenyan-lang-vscode/compare/v0.10.2...v0.10.3) (2019-12-30)
 
 
