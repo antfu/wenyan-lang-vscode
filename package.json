@@ -35,7 +35,12 @@
           "文言"
         ],
         "extensions": [
-          ".wy"
+          ".wy",
+          ".文言",
+          "經",
+          "篇",
+          "章",
+          "書"
         ]
       }
     ],
@@ -231,12 +236,12 @@
   "devDependencies": {
     "@antfu/eslint-config-ts": "0.2.10",
     "@types/jest": "^24.0.25",
-    "@types/node": "13.1.1",
+    "@types/node": "13.1.2",
     "@types/prettier": "^1.19.0",
     "@types/vscode": "^1.41.0",
-    "@typescript-eslint/eslint-plugin": "2.13.0",
-    "@typescript-eslint/parser": "2.13.0",
-    "@wenyanlang/cli": "0.1.2",
+    "@typescript-eslint/eslint-plugin": "2.14.0",
+    "@typescript-eslint/parser": "2.14.0",
+    "@wenyanlang/cli": "0.1.3",
     "conventional-github-releaser": "3.1.3",
     "cpy-cli": "^3.0.0",
     "eslint": "6.8.0",
@@ -249,7 +254,7 @@
     "typescript": "^3.7.4",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
-    "wenyanizer": "^0.2.7"
+    "wenyanizer": "^0.2.10"
   },
   "dependencies": {}
 }
