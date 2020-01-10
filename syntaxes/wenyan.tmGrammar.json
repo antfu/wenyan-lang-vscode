@@ -71,6 +71,10 @@
           "match": "昔之|今|是矣|其|不復存矣|是"
         },
         {
+          "name": "keyword.operator",
+          "match": "或云|蓋謂"
+        },
+        {
           "name": "keyword.other",
           "match": "書之|名之曰|施|曰|噫|取|矣"
         }
@@ -89,8 +93,8 @@
     },
     "comment-blocks": {
       "name": "comment.block",
-      "begin": "(注曰|疏曰|批曰)。「「",
-      "end": "」」",
+      "begin": "(注曰|疏曰|批曰)。(「「|『)",
+      "end": "(」」|』)」",
       "patterns": [
         {
           "name": "constant.character",
@@ -110,8 +114,8 @@
         },
         {
           "name": "string.quoted",
-          "begin": "「「",
-          "end": "」」",
+          "begin": "(「「|『)",
+          "end": "(」」|』)",
           "patterns": [
             {
               "name": "constant.character",
