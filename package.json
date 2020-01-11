@@ -54,7 +54,7 @@
       {
         "language": "wenyan",
         "scopeName": "source.wenyan",
-        "path": "./syntaxes/wenyan.tmGrammar.json"
+        "path": "./syntaxes/tmGrammar.json"
       }
     ],
     "commands": [
@@ -225,7 +225,7 @@
     "publish:minor": "standard-version --release-as minor && git push --follow-tags && vsce publish && npm run gh-release",
     "publish:patch": "standard-version --release-as patch && git push --follow-tags && vsce publish && npm run gh-release",
     "gh-release": "conventional-github-releaser -p angular",
-    "copy-dist": "npx cpy node_modules/@wenyanlang/cli/index.min.js dist --rename wenyan.js",
+    "copy-dist": "npx cpy node_modules/@wenyanlang/cli/index.min.js dist --rename wenyan.js && npx cpy node_modules/@wenyanlang/highlight/tmGrammar.json syntaxes",
     "vscode:prepublish": "npm run copy-dist && webpack --mode development",
     "compile": "npm run copy-dist && webpack --mode development",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
@@ -241,7 +241,8 @@
     "@types/vscode": "^1.41.0",
     "@typescript-eslint/eslint-plugin": "2.15.0",
     "@typescript-eslint/parser": "2.15.0",
-    "@wenyanlang/cli": "0.2.2",
+    "@wenyanlang/cli": "0.2.4",
+    "@wenyanlang/highlight": "0.0.6",
     "conventional-github-releaser": "3.1.3",
     "cpy-cli": "^3.0.0",
     "eslint": "6.8.0",

@@ -35,48 +35,24 @@
     "keywords": {
       "patterns": [
         {
-          "name": "storage.modifier",
-          "match": "吾有|今有|有"
-        },
-        {
           "name": "storage.type",
-          "match": "數|列|言|術|爻|物"
+          "match": "元|物|爻|術|言|列|數"
         },
         {
           "name": "keyword.control",
-          "match": "恆為是"
+          "match": "乃行是術曰|若其不然者|乃止是遍|乃歸空無|欲行是術|若其然者|其物如是|乃得矣|恆為是|之術也|必先得|是術曰|之物也|云云|中之|為是|乃止|若非|或若|乃得|是謂|者|若|遍|凡|也"
         },
         {
           "name": "keyword.control",
-          "match": "若非|若|者|夫"
-        },
-        {
-          "name": "keyword.control",
-          "match": "乃得|乃歸空無|是謂|之術也|必先得|是術曰|乃行是術曰|欲行是術|也|云云|凡|中之|恆為是|為是|遍|乃止|其物如是"
+          "match": "蓋謂|或云"
         },
         {
           "name": "keyword.operator",
-          "match": "等於|不等於|不大於|不小於|大於|小於"
-        },
-        {
-          "name": "keyword.operator",
-          "match": "吾嘗觀|之書|方悟|之義"
-        },
-        {
-          "name": "keyword.operator",
-          "match": "加|減|乘|除|中有陽乎|中無陰乎|變|所餘幾何|以|於|之長|之|充|銜|其餘"
-        },
-        {
-          "name": "keyword.operator",
-          "match": "昔之|今|是矣|其|不復存矣|是"
-        },
-        {
-          "name": "keyword.operator",
-          "match": "或云|蓋謂"
+          "match": "中有陽乎|中無陰乎|不等於|不大於|不小於|等於|大於|小於|加|乘|除|以|於|減"
         },
         {
           "name": "keyword.other",
-          "match": "書之|名之曰|施|曰|噫|取|矣"
+          "match": "不知何禍歟|不復存矣|如事不諧|姑妄行此|吾嘗觀|之禍歟|乃作罷|名之曰|書之|以施|之禍|嗚呼|之義|昔之|方悟|是矣|今有|吾有|之書|物之|夫|中|今|取|噫|曰|施|豈|有"
         }
       ]
     },
@@ -94,7 +70,7 @@
     "comment-blocks": {
       "name": "comment.block",
       "begin": "(注曰|疏曰|批曰)。(「「|『)",
-      "end": "(」」|』)」",
+      "end": "(」」|』)",
       "patterns": [
         {
           "name": "constant.character",
@@ -106,16 +82,16 @@
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "又|負|零|一|二|三|四|五|六|七|八|九|十|百|千|萬|億|兆|京|垓|秭|穣|溝|澗|正|載|極|恆河沙|阿僧祇|那由他|不可思議|無量大數|分|釐|毫|絲|忽|微|纖|沙|塵|埃|渺|漠|模糊|逡巡|須臾|瞬息|彈指|剎那|六德|虛|空|清|淨"
+          "match": "負|·|又|零|〇|一|二|三|四|五|六|七|八|九|十|百|千|萬|億|兆|京|垓|秭|穰|溝|澗|正|載|極|分|釐|毫|絲|忽|微|纖|沙|塵|埃|渺|漠"
         },
         {
           "name": "constant.language",
-          "match": "陰|陽"
+          "match": "陰|陽|其"
         },
         {
           "name": "string.quoted",
-          "begin": "(「「|『)",
-          "end": "(」」|』)",
+          "begin": "「「|『",
+          "end": "」」|』",
           "patterns": [
             {
               "name": "constant.character",
@@ -129,7 +105,7 @@
       "patterns": [
         {
           "name": "punctuation.separator",
-          "match": "。"
+          "match": "。|、"
         }
       ]
     },
