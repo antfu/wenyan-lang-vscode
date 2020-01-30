@@ -10,7 +10,7 @@ import i18n from '../i18n'
 
 const m: ExtensionModule = () => {
   return [
-    commands.registerCommand(CommandKeys.execute, async () => {
+    commands.registerCommand(CommandKeys.execute, async() => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
         return
@@ -19,7 +19,7 @@ const m: ExtensionModule = () => {
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
 
-    commands.registerCommand(CommandKeys.compile, async () => {
+    commands.registerCommand(CommandKeys.compile, async() => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
         return
@@ -28,7 +28,7 @@ const m: ExtensionModule = () => {
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
 
-    commands.registerCommand(CommandKeys.wenyanize, async () => {
+    commands.registerCommand(CommandKeys.wenyanize, async() => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== 'javascript')
         return
@@ -37,13 +37,13 @@ const m: ExtensionModule = () => {
       window.showTextDocument(await workspace.openTextDocument(uri), { preview: false, viewColumn: ViewColumn.Beside })
     }),
 
-    commands.registerCommand(CommandKeys.reload, async () => {
+    commands.registerCommand(CommandKeys.reload, async() => {
       const document = window.activeTextEditor?.document
       if (document?.uri.scheme === DOC_SCHEMA)
         documentProvider.onDidChangeEmitter.fire(document.uri)
     }),
 
-    commands.registerCommand(CommandKeys.render, async () => {
+    commands.registerCommand(CommandKeys.render, async() => {
       const document = window.activeTextEditor?.document
       if (document?.languageId !== LANG_ID)
         return

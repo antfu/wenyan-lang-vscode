@@ -8,7 +8,7 @@ import { setCTX } from './ctx'
 import { Log } from './log'
 import { GetExecutableVersion } from './exec'
 
-export async function activate (ctx: ExtensionContext) {
+export async function activate(ctx: ExtensionContext) {
   setCTX(ctx)
 
   const modules = [
@@ -27,5 +27,5 @@ export async function activate (ctx: ExtensionContext) {
   statusBarProvider.update()
 }
 
-export function deactivate () {
+export function deactivate() {
 }

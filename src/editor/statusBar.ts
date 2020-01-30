@@ -9,32 +9,32 @@ class StatusBarProvider implements Disposable {
 
   private _disposbales: Disposable[] = []
 
-  constructor () {
+  constructor() {
     this.version = window.createStatusBarItem(StatusBarAlignment.Right)
     this.runningState = window.createStatusBarItem(StatusBarAlignment.Right)
     this.setUpWatchers()
   }
 
-  setUpWatchers () {
+  setUpWatchers() {
     this._disposbales.push(window.onDidChangeActiveTextEditor(() => this.updateVersionVisibility()))
   }
 
-  update () {
+  update() {
     this.updateVersion()
   }
 
-  updateVersionVisibility () {
+  updateVersionVisibility() {
     if (window.activeTextEditor?.document?.languageId === LANG_ID)
       this.version.show()
     else
       this.version.hide()
   }
 
-  async updateVersion () {
+  async updateVersion() {
     this.version.text = `文言 ${await GetExecutableVersion()}`
   }
 
-  dispose () {
+  dispose() {
     Disposable.from(...this._disposbales).dispose()
   }
 }

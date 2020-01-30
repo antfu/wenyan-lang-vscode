@@ -12,7 +12,7 @@ export interface ExecuteOptions {
   output?: string
 }
 
-export function getOptionsString (options?: ExecuteOptions) {
+export function getOptionsString(options?: ExecuteOptions) {
   const parts = []
   if (!options)
     return ''
@@ -28,7 +28,7 @@ export function getOptionsString (options?: ExecuteOptions) {
   return parts.join(' ')
 }
 
-export async function Run (cmd: string, cwd?: string) {
+export async function Run(cmd: string, cwd?: string) {
   Log.info(`💻 ${cmd}`)
   return new Promise<string>((resolve, reject) => {
     cp.exec(cmd, { cwd }, (err, stdout, stderr) => {
@@ -43,11 +43,11 @@ export async function Run (cmd: string, cwd?: string) {
   })
 }
 
-export function Exec (filepath: string | undefined, content: string, options?: ExecuteOptions) {
+export function Exec(filepath: string | undefined, content: string, options?: ExecuteOptions) {
   return Run(`node "${Config.executablePath}" ${getOptionsString(options)} -e "${content.replace(/\n/g, '')}"`, filepath ? path.dirname(filepath) : undefined)
 }
 
-export async function GetExecutableVersion () {
+export async function GetExecutableVersion() {
   try {
     return `v${await Run(`node "${Config.executablePath}" -v`)}`
   }

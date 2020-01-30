@@ -2,7 +2,7 @@ const prefix = '_ans'
 const regexDefine = new RegExp(`var (${prefix}[\\d]+)=(.*?);`, 'gm')
 const regexUse = new RegExp(`(${prefix}[\\d]+?)[^=\\d]`, 'g')
 
-function findAll (reg: RegExp, str: string) {
+function findAll(reg: RegExp, str: string) {
   const result = []
   let match
   while (match = reg.exec(str)) {
@@ -15,7 +15,7 @@ function findAll (reg: RegExp, str: string) {
   return result
 }
 
-export function optimize (src: string) {
+export function optimize(src: string) {
   const resultDefine = findAll(regexDefine, src)
   const resultUse = findAll(regexUse, src)
 

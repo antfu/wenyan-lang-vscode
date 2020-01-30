@@ -6,11 +6,11 @@ import { getCTX } from './ctx'
 export type SupportTargetLanguage = 'py' | 'js' | 'rb'
 
 export class Config {
-  static get executablePath () {
+  static get executablePath() {
     return this.getConfig<string>('executablePath') || path.resolve(getCTX().extensionPath, 'dist/wenyan.js')
   }
 
-  static get targetLanguage (): SupportTargetLanguage {
+  static get targetLanguage(): SupportTargetLanguage {
     const value = this.getConfig<string>('targetLanguage')
     if (value === 'python')
       return 'py'
@@ -20,15 +20,15 @@ export class Config {
       return 'js'
   }
 
-  static get runOnSave () {
+  static get runOnSave() {
     return this.getConfig<boolean>('runOnSave') || false
   }
 
-  static get romanizeMethod () {
+  static get romanizeMethod() {
     return this.getConfig<string|null>('romanizeMethod') || undefined
   }
 
-  private static getConfig<T = any> (key: string): T | undefined {
+  private static getConfig<T = any>(key: string): T | undefined {
     const config = workspace
       .getConfiguration(EXT_NAMESPACE)
       .get<T>(key)
@@ -37,7 +37,7 @@ export class Config {
   }
 
   // @ts-ignore
-  private static async setConfig (key: string, value: any, isGlobal = false) {
+  private static async setConfig(key: string, value: any, isGlobal = false) {
     return await workspace
       .getConfiguration(EXT_NAMESPACE)
       .update(key, value, isGlobal)

@@ -9,12 +9,12 @@ import { ExtensionModule } from '../module'
 import { Exec } from '../exec'
 import { optimize } from '../misc/optimize'
 
-async function readFile (uri: Uri) {
+async function readFile(uri: Uri) {
   const document = await workspace.openTextDocument(uri)
   return document.getText()
 }
 
-async function getCompiledResult (uri: Uri, target: SupportTargetLanguage) {
+async function getCompiledResult(uri: Uri, target: SupportTargetLanguage) {
   const content = await readFile(uri)
   const result = await Exec(uri.fsPath, content, {
     lang: target,
@@ -22,7 +22,9 @@ async function getCompiledResult (uri: Uri, target: SupportTargetLanguage) {
     roman: Config.romanizeMethod,
   }) || ''
 
-  if (target === 'py') { return result }
+  if (target === 'py') {
+    return result
+  }
   else {
     return prettier
       .format(
@@ -36,7 +38,7 @@ async function getCompiledResult (uri: Uri, target: SupportTargetLanguage) {
   }
 }
 
-async function getExecResult (uri: Uri, target: SupportTargetLanguage) {
+async function getExecResult(uri: Uri, target: SupportTargetLanguage) {
   const content = await readFile(uri)
   return await Exec(uri.fsPath, content, {
     lang: target,
@@ -44,7 +46,7 @@ async function getExecResult (uri: Uri, target: SupportTargetLanguage) {
   }) || ''
 }
 
-async function getWenyanizeResult (uri: Uri) {
+async function getWenyanizeResult(uri: Uri) {
   const content = await readFile(uri)
   return js2wy(content)
 }
@@ -53,7 +55,7 @@ class DocumentProvider implements TextDocumentContentProvider {
   onDidChangeEmitter = new EventEmitter<Uri>()
   onDidChange = this.onDidChangeEmitter.event
 
-  async provideTextDocumentContent (uri: Uri) {
+  async provideTextDocumentContent(uri: Uri) {
     const query = parseQuery(uri.query)
     const path = query.path
     const action = query.action as ResultActions

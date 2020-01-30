@@ -5,13 +5,13 @@ import { LANG_ID } from '../meta'
 
 const BODY_PARAMETER_REGEX = /\$\d+/g
 
-function moveSelection (selection: Selection, shift: number): Selection {
+function moveSelection(selection: Selection, shift: number): Selection {
   const newPosition = selection.active.translate(0, shift)
   const newSelection = new Selection(newPosition, newPosition)
   return newSelection
 }
 
-function parseBody (body: string[]) {
+function parseBody(body: string[]) {
   const rawBody = body.join('\n')
   const parsed = rawBody.replace(BODY_PARAMETER_REGEX, '')
   let shiftBack = 0
@@ -23,7 +23,7 @@ function parseBody (body: string[]) {
   return { parsed, shiftBack }
 }
 
-function onTextChanged (e: TextDocumentChangeEvent) {
+function onTextChanged(e: TextDocumentChangeEvent) {
   const editor = window.activeTextEditor
 
   const document = editor?.document
