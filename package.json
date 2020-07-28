@@ -189,6 +189,11 @@
       }
     ]
   },
+  "configurationDefaults": {
+    "[wenyan]": {
+      "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?。、「」"
+    }
+  },
   "standard-version": {
     "types": [
       {
