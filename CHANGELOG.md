@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.6](https://github.com/antfu/wenyan-lang-vscode/compare/v0.11.5...v0.11.6) (2021-03-13)
+
+
+### 🐞 Bug Fixes
+
+* update dynamic.json, close [#23](https://github.com/antfu/wenyan-lang-vscode/issues/23) ([#24](https://github.com/antfu/wenyan-lang-vscode/issues/24)) ([d193a60](https://github.com/antfu/wenyan-lang-vscode/commit/d193a603c172fdae0349f7617a5bed63eefe186b))
+
 ### [0.11.5](https://github.com/antfu/wenyan-lang-vscode/compare/v0.11.4...v0.11.5) (2020-07-30)
 
 ### [0.11.4](https://github.com/antfu/wenyan-lang-vscode/compare/v0.11.3...v0.11.4) (2020-01-30)
