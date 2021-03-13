@@ -243,7 +243,7 @@
     "@types/jest": "^25.2.3",
     "@types/node": "13.5.2",
     "@types/prettier": "^1.19.1",
-    "@types/vscode": "^1.54.0",
+    "@types/vscode": "^1.41.0",
     "@typescript-eslint/eslint-plugin": "2.18.0",
     "@typescript-eslint/parser": "2.18.0",
     "@wenyanlang/cli": "^0.3.2",
