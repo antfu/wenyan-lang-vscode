@@ -66,6 +66,7 @@ function onTextChanged(e: TextDocumentChangeEvent) {
 function provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken, context: CompletionContext) {
   const line = document.lineAt(position)
   const lineText = line.text.substring(0, position.character)
+  /*
   let lenth = lineText.length
   for (lenth; lenth >= 0; lenth -= 1) {
     if (lineText[lenth - 1] !== '.' && lineText[lenth - 1] !== '0' && lineText[lenth - 1] !== '1' && lineText[lenth - 1] !== '2' && lineText[lenth - 1] !== '3' && lineText[lenth - 1] !== '4' && lineText[lenth - 1] !== '5' && lineText[lenth - 1] !== '6' && lineText[lenth - 1] !== '7' && lineText[lenth - 1] !== '8' && lineText[lenth - 1] !== '9')
@@ -73,18 +74,24 @@ function provideCompletionItems(document: TextDocument, position: Position, toke
     else if (lineText[lenth - 1] === ' ')
       break
   }
-  const letter = line.text.substring(lenth, position.character)
-  const de = [letter]
+  */
+  // const letter = line.text.substring(lenth, position.character)
+  const letter = lineText.match(/-?[0-9,]*\.?[0-9,]+$/)
+  if (letter === null) return
+  const de = [lineText]
   return de.map((dee) => {
     return new CompletionItem(dee, CompletionItemKind.Text)
   })
 }
 
 function resolveCompletionItem(item: any, token: CancellationToken) {
-  const letter = item.label
-  const i = Number(letter)
+  const letter = item.label.match(/-?[0-9,]*\.?[0-9,]+$/)
+  if (letter === null) return
+  const former = item.label.substring(0, item.label.length - letter[0].length)
+  console.log(former)
+  const i = Number(letter[0])
   const numm = num2hanzi(i)
-  item = { label: numm, kind: 0 }
+  item = { label: former + numm, kind: 0 }
   return item
 }
 
