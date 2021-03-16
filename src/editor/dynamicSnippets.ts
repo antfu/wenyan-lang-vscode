@@ -92,7 +92,7 @@ const m: ExtensionModule = (context: { subscriptions: Disposable[] }) => {
   context.subscriptions.push(languages.registerCompletionItemProvider('wenyan', {
     provideCompletionItems,
     resolveCompletionItem,
-  }, '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'))
+  }, '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '若', '書', '吾', '爻', '數', '批', '疏', '注', '恆', '乃', '凡', '為'))
   return workspace.onDidChangeTextDocument(e => onTextChanged(e))
 }
 
