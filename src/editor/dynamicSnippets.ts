@@ -73,9 +73,7 @@ function provideCompletionItems(document: TextDocument, position: Position, toke
     else if (lineText[lenth - 1] === ' ')
       break
   }
-  console.log(lineText)
   const letter = line.text.substring(lenth, position.character)
-  console.log(letter)
   const de = [letter]
   return de.map((dee) => {
     return new CompletionItem(dee, CompletionItemKind.Text)
