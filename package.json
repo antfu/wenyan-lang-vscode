@@ -255,7 +255,7 @@
     "jest": "^25.5.4",
     "prettier": "^1.19.1",
     "rimraf": "3.0.1",
-    "standard-version": "7.1.0",
+    "standard-version": "8.0.1",
     "ts-jest": "^25.5.1",
     "ts-loader": "6.2.1",
     "typescript": "^3.9.9",
