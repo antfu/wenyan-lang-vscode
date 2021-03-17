@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/antfu/wenyan-lang-vscode/compare/v0.11.7...v0.12.0) (2021-03-17)
+
+
+### ⚡ Features
+
+* number autocomplete ([#25](https://github.com/antfu/wenyan-lang-vscode/issues/25)) ([0b22079](https://github.com/antfu/wenyan-lang-vscode/commit/0b220794ab5bced2321594a9b857aba8dfbf59da))
+
 ### [0.11.7](https://github.com/antfu/wenyan-lang-vscode/compare/v0.11.6...v0.11.7) (2021-03-13)
 
 ### [0.11.6](https://github.com/antfu/wenyan-lang-vscode/compare/v0.11.5...v0.11.6) (2021-03-13)
