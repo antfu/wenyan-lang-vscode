@@ -246,6 +246,7 @@
     "@types/vscode": "^1.41.0",
     "@typescript-eslint/eslint-plugin": "2.18.0",
     "@typescript-eslint/parser": "2.18.0",
+    "@wenyan/core": "^0.3.4",
     "@wenyanlang/cli": "^0.3.2",
     "@wenyanlang/highlight": "0.0.8",
     "conventional-github-releaser": "3.1.3",

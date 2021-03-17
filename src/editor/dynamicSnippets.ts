@@ -1,8 +1,8 @@
 import { window, workspace, TextDocumentChangeEvent, Range, Position, Selection, languages, CompletionItem, CompletionItemKind, TextDocument, CancellationToken, CompletionContext, Disposable } from 'vscode'
+import Wenyan from '@wenyan/core'
 import { ExtensionModule } from '../module'
 import DynamicSnippets from '../../snippets/dynamic.json'
 import { LANG_ID } from '../meta'
-import { num2hanzi } from './converts/hanzi2num'
 
 const BODY_PARAMETER_REGEX = /\$\d+/g
 
@@ -79,7 +79,7 @@ function resolveCompletionItem(item: any, token: CancellationToken) {
   if (letter === null) return
   const former = item.label.substring(0, item.label.length - letter[0].length)
   const i = Number(letter[0])
-  const numm = num2hanzi(i)
+  const numm = Wenyan.num2hanzi(i)
   item = { label: former + numm, kind: 0 }
   return item
 }
