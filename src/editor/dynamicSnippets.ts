@@ -1,5 +1,5 @@
 import { window, workspace, TextDocumentChangeEvent, Range, Position, Selection, languages, CompletionItem, CompletionItemKind, TextDocument, CancellationToken, CompletionContext, Disposable } from 'vscode'
-import Wenyan from '@wenyan/core'
+import { num2hanzi } from '@wenyan/core'
 import { ExtensionModule } from '../module'
 import DynamicSnippets from '../../snippets/dynamic.json'
 import { LANG_ID } from '../meta'
@@ -67,19 +67,31 @@ function provideCompletionItems(document: TextDocument, position: Position, toke
   const line = document.lineAt(position)
   const lineText = line.text.substring(0, position.character)
   const letter = lineText.match(/-?[0-9,]*\.?[0-9,]+$/)
-  if (letter === null) return
-  const de = [lineText]
-  return de.map((dee) => {
-    return new CompletionItem(dee, CompletionItemKind.Text)
-  })
+  if (letter === null) {
+    const formorvari = document.getText().match(/[\u4E00-\u9FA5]*「[\u4E00-\u9FA5]{0,}」[\u4E00-\u9FA5]*$/)
+    if (formorvari === null) return
+    const vari = new Array(10)
+    formorvari.forEach((element: string) => {
+      vari.push(element.match(/「[\u4E00-\u9FA5]{0,}」$/))
+    })
+    if (vari === null) return
+    return vari.map((dee) => {
+      return new CompletionItem(dee, CompletionItemKind.Text)
+    })
+  }
+  else {
+    const de = [lineText]
+    return de.map((dee) => {
+      return new CompletionItem(dee, CompletionItemKind.Text)
+    })
+  }
 }
 
 function resolveCompletionItem(item: any, token: CancellationToken) {
   const letter = item.label.match(/-?[0-9,]*\.?[0-9,]+$/)
-  if (letter === null) return
   const former = item.label.substring(0, item.label.length - letter[0].length)
   const i = Number(letter[0])
-  const numm = Wenyan.num2hanzi(i)
+  const numm = num2hanzi(i)
   item = { label: former + numm, kind: 0 }
   return item
 }
@@ -88,7 +100,7 @@ const m: ExtensionModule = (context: { subscriptions: Disposable[] }) => {
   context.subscriptions.push(languages.registerCompletionItemProvider('wenyan', {
     provideCompletionItems,
     resolveCompletionItem,
-  }, '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '若', '書', '吾', '爻', '數', '批', '疏', '注', '恆', '乃', '凡', '為'))
+  }, '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '若', '書', '吾', '爻', '數', '批', '疏', '注', '恆', '乃', '凡', '為', '「', '」'))
   return workspace.onDidChangeTextDocument(e => onTextChanged(e))
 }
 
